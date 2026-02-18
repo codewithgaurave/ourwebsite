@@ -3,8 +3,8 @@ import { Play, ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="relative w-full p-8 md:p-16 flex flex-col justify-between overflow-hidden">
-      {/* Background Gradient Layer (Exact specification) */}
+    <div className="relative w-full p-6 sm:p-10 md:p-16 flex flex-col justify-center min-h-[85vh] lg:min-h-screen overflow-hidden">
+      {/* Background Gradient Layer */}
       <div
         className="absolute inset-0 -z-20 scale-110"
         style={{
@@ -17,10 +17,9 @@ const Hero = () => {
         }}
       ></div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-4 z-10 pt-10">
-        {/* Left Section (Client info + Rotating Badge) */}
-        <div className="md:col-span-4 flex flex-col justify-between h-full min-h-[500px]">
-          {/* Ezra Michael Box */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 w-full max-w-[1536px] mx-auto h-full gap-8 z-10 items-center">
+        {/* Left Section (Client info + Rotating Badge) - Visible on lg */}
+        <div className="hidden lg:flex lg:col-span-4 flex-col justify-between h-full min-h-[500px] py-12">
           <div className="py-2">
             <div className="flex items-center gap-4 mb-6">
               <img
@@ -29,7 +28,7 @@ const Hero = () => {
                 className="w-16 h-16 rounded-full border-2 border-white/10 object-cover shadow-lg"
               />
               <div className="flex flex-col">
-                <h3 className=" font-unbounded uppercase tracking-tight text-white leading-none">
+                <h3 className="font-unbounded uppercase tracking-tight text-white leading-none">
                   EZRA MICHAEL
                 </h3>
                 <p className="text-sm text-gray-400 font-medium mt-1">
@@ -42,8 +41,7 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Rotating Text (Bottom Left) */}
-          <div className="relative w-30 h-30 flex items-center justify-center -ml-4 rounded-full bg-[#302734]">
+          <div className="relative w-32 h-32 flex items-center justify-center -ml-4 rounded-full bg-[#302734]">
             <div className="absolute inset-0 animate-spin-slow">
               <svg viewBox="0 0 100 100" className="w-full h-full">
                 <path
@@ -65,65 +63,69 @@ const Hero = () => {
         </div>
 
         {/* Right Section (Titles and Description) */}
-        <div className="md:col-span-8 flex flex-col items-end justify-center -mt-19">
-          {/* Headings Block */}
-          <div className="w-full flex flex-col items-end mb-16 relative">
-            {/* OPTIMZING */}
-            <div className="relative w-full flex justify-end">
-              <div
-                className="absolute left-[7%] top-1/2 -translate-y-1/2 w-[55%] h-[70%] backdrop-blur-[35px] rounded-2xl border border-white/10 -z-10 shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
-                }}
-              ></div>
-              <h1 className="text-[70px] sm:text-[100px] md:text-[90px] font-[500] font-unbounded text-white uppercase  leading-[150px] select-none drop-shadow-2xl">
-                OPTIMZING
+        <div className="lg:col-span-8 flex flex-col items-center lg:items-end justify-center w-full">
+          {/* Headings Block - Using flex to force single lines */}
+          <div className="w-full flex flex-col items-center lg:items-end mb-10 lg:mb-16 relative font-unbounded text-white uppercase select-none space-y-2 lg:space-y-0">
+            {/* OPTIMIZING */}
+            <div className="flex items-center justify-center lg:justify-end w-full">
+              <h1 className="text-[34px] sm:text-[54px] md:text-[74px] lg:text-[100px] 2xl:text-[110px] font-bold whitespace-nowrap flex items-center">
+                <span className="relative inline-block px-2 sm:px-4 ml-[-8px]">
+                  <div
+                    className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[75%] -z-10 rounded-2xl md:rounded-[32px] backdrop-blur-[35px] border border-white/10"
+                    style={{
+                      background:
+                        "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
+                    }}
+                  ></div>
+                  OPTIM
+                </span>
+                IZING
               </h1>
             </div>
 
             {/* VISIBILITY */}
-            <div className="relative w-full flex justify-end -mt-4 mr-15">
-              <div
-                className="absolute right-[-3%] top-1/2 -translate-y-1/2 w-[44%] h-[100%] backdrop-blur-[35px] rounded-2xl border border-white/10 -z-10 shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
-                }}
-              ></div>
-              <h1 className="text-[70px] sm:text-[100px] md:text-[100px] font-[500] font-unbounded text-white uppercase  tracking-tighter leading-none select-none drop-shadow-2xl">
-                VISIBILITY
+            <div className="flex items-center justify-center lg:justify-end w-full lg:-mt-6 2xl:-mt-10 lg:mr-12">
+              <h1 className="text-[34px] sm:text-[54px] md:text-[74px] lg:text-[100px] 2xl:text-[110px] font-bold whitespace-nowrap flex items-center tracking-tighter">
+                VISIB
+                <span className="relative inline-block px-2 sm:px-4 ml-1">
+                  <div
+                    className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[85%] -z-10 rounded-2xl md:rounded-[32px] backdrop-blur-[35px] border border-white/10"
+                    style={{
+                      background:
+                        "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
+                    }}
+                  ></div>
+                  ILITY
+                </span>
               </h1>
             </div>
           </div>
 
           {/* Description & Buttons */}
-          <div className="w-full max-w-xl self-start md:self-auto md:mr-18">
-            <p className="text-gray-300 text-[14px] font-medium leading-relaxed mb-10">
+          <div className="w-full max-w-xl flex flex-col items-center lg:items-end lg:mr-16 text-center lg:text-right px-4">
+            <p className="text-gray-300 text-[14px] sm:text-[16px] md:text-[18px] font-medium leading-relaxed mb-10 max-w-[500px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
-            <div className="flex items-center gap-8">
-              <button className="flex items-center gap-3 border-2 border-white/10 px-10 py-[18px] rounded-full text-sm font-bold uppercase tracking-widest text-white cursor-pointer bg-transparent transition-all duration-500 group shadow-lg">
+
+            <div className="flex flex-col sm:flex-row items-center gap-6 lg:gap-8 justify-center lg:justify-end w-full sm:w-auto">
+              <button className="flex items-center gap-3 border-2 border-white/10 px-8 lg:px-10 py-4 lg:py-[18px] rounded-full text-[13px] lg:text-sm font-bold uppercase tracking-[2px] text-white cursor-pointer bg-white/[0.02] hover:bg-white/[0.05] transition-all group w-full sm:w-auto justify-center">
                 Learn More
-                <div className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10 transition-colors">
+                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10">
                   <ArrowRight
                     size={16}
                     className="group-hover:translate-x-1 transition-transform"
                   />
-                </div>
+                </span>
               </button>
-              <div className="relative group cursor-pointer h-16 w-16">
-                {/* Wave Animations */}
-                <div className="absolute inset-0 bg-white/20 rounded-full animate-wave"></div>
-                <div className="absolute inset-0 bg-white/20 rounded-full animate-wave [animation-delay:0.7s]"></div>
-                <div className="absolute inset-0 bg-white/20 rounded-full animate-wave [animation-delay:1.4s]"></div>
 
-                <div className="relative w-16 h-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-2xl overflow-hidden">
+              <div className="relative group cursor-pointer h-16 w-16">
+                <div className="absolute inset-0 bg-white/10 rounded-full animate-ping opacity-20"></div>
+                <div className="relative w-16 h-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-2xl overflow-hidden">
                   <Play
-                    size={22}
+                    size={20}
                     fill="white"
-                    className="ml-1 text-white group-hover:text-purple-400 group-hover:fill-purple-400 transition-colors relative z-10"
+                    className="ml-1 text-white relative z-10"
                   />
                 </div>
               </div>
@@ -131,9 +133,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Subtle Container Border Overlay */}
-      <div className="absolute inset-0 border border-white/5 rounded-[60px] pointer-events-none"></div>
     </div>
   );
 };

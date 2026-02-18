@@ -1,24 +1,36 @@
 import React, { useState } from "react";
-import { Search, ChevronDown, X } from "lucide-react";
+import { Search, ChevronDown, X, Menu } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuItems = [
+    { name: "Home", dropdown: null },
+    { name: "About Us", dropdown: ["About Us", "Team"] },
+    { name: "Services", dropdown: ["Services", "Single Services"] },
+    { name: "Pages", dropdown: ["Pricing Plan", "FAQs", "Blog", "404"] },
+  ];
 
   return (
     <>
-      <nav className="flex items-center px-10 py-6 bg-transparent text-white w-full z-50 relative">
+      <nav className="flex items-center justify-between px-6 md:px-10 py-6 bg-transparent text-white w-full z-50 relative">
         {/* Logo Section */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 z-50">
           <NavLink to="/">
-            <img src={logo} alt="logo" className="h-[42px] object-contain" />
+            <img
+              src={logo}
+              alt="logo"
+              className="h-[36px] md:h-[42px] object-contain"
+            />
           </NavLink>
         </div>
 
-        {/* Nav Links - Pushed to right of center */}
-        <div className="hidden md:flex items-center gap-10 text-[16px] font-semibold text-gray-200 ml-auto mr-16">
+        {/* Nav Links - Desktop */}
+        <div className="hidden lg:flex items-center gap-10 text-[16px] font-semibold text-gray-200 absolute left-1/2 -translate-x-1/2">
           <span className="cursor-pointer transition-all duration-300 hover:text-purple-400">
             Home
           </span>
@@ -118,30 +130,21 @@ const Navbar = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-6">
-          {/* Contact Button from Image 1 */}
-          <button className="relative group h-[52px] w-[190px] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(43,91,163,0.3)] cursor-pointer">
-            {/* Background Layers */}
+        <div className="flex items-center gap-4 md:gap-6">
+          {/* Contact Button */}
+          <button className="hidden sm:flex relative group h-[46px] md:h-[52px] w-[150px] md:w-[190px] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(43,91,163,0.3)] cursor-pointer items-center justify-center">
             <div className="absolute inset-0 bg-[#0d0714]"></div>
-
-            {/* The Specific Blue Glow on Right Side */}
             <div className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-[#2b5ba3]/60 to-transparent blur-md group-hover:from-[#2b5ba3]/80 transition-all"></div>
-
-            {/* Border Inner */}
             <div className="absolute inset-0 border border-white/10 rounded-full"></div>
-
-            {/* Hover Shine Effect */}
             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-            {/* Text */}
-            <span className="relative z-10 text-[15px] font-bold tracking-wider text-white">
+            <span className="relative z-10 text-[13px] md:text-[15px] font-bold tracking-wider text-white">
               Contact Us
             </span>
           </button>
 
           {/* Search Icon */}
           <div
-            className="cursor-pointer group"
+            className="cursor-pointer group p-2"
             onClick={() => setIsSearchOpen(true)}
           >
             <Search
@@ -149,8 +152,65 @@ const Navbar = () => {
               className="text-white group-hover:scale-110 transition-transform"
             />
           </div>
+
+          {/* Hamburger Menu Toggle */}
+          <div
+            className="lg:hidden cursor-pointer group p-2 z-50 text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Drawer */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.4 }}
+            className="fixed inset-0 bg-[#0b0612] z-[40] flex flex-col p-10 pt-32 overflow-y-auto lg:hidden"
+          >
+            <div className="flex flex-col gap-8">
+              {menuItems.map((item, idx) => (
+                <div key={idx} className="flex flex-col gap-4">
+                  <div className="flex items-center justify-between text-2xl font-bold text-white uppercase tracking-tight">
+                    {item.name}
+                    {item.dropdown && (
+                      <ChevronDown size={20} className="opacity-50" />
+                    )}
+                  </div>
+                  {item.dropdown && (
+                    <div className="flex flex-col gap-4 pl-4 border-l border-white/10">
+                      {item.dropdown.map((sub, i) => (
+                        <a
+                          key={i}
+                          href="#"
+                          className="text-lg text-white/50 hover:text-purple-400 transition-colors"
+                        >
+                          {sub}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {/* Mobile Contact Button */}
+              <button className="sm:hidden relative group h-[52px] w-full rounded-full overflow-hidden mt-8">
+                <div className="absolute inset-0 bg-[#0d0714]"></div>
+                <div className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-[#2b5ba3]/60 to-transparent blur-md group-hover:from-[#2b5ba3]/80 transition-all"></div>
+                <div className="absolute inset-0 border border-white/10 rounded-full"></div>
+                <span className="relative z-10 text-[15px] font-bold tracking-wider text-white">
+                  Contact Us
+                </span>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Search Overlay */}
       <AnimatePresence>

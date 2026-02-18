@@ -2,15 +2,15 @@ import React from "react";
 import { Facebook, Twitter, Youtube, Phone, Send } from "lucide-react";
 import logo from "../assets/logo.png";
 
-const Footer = () => {
-  const scrollingText = [
-    "STRATEGY",
-    "EXECUTION",
-    "SUCCESS",
-    "GROWTH",
-    "INNOVATION",
-  ];
+const scrollingText = [
+  "STRATEGY",
+  "EXECUTION",
+  "SUCCESS",
+  "GROWTH",
+  "INNOVATION",
+];
 
+const Footer = () => {
   return (
     <footer
       className="pt-24 pb-12 px-4 md:px-10 relative overflow-hidden"
@@ -211,4 +211,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);

@@ -4,16 +4,16 @@ import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 
+const menuItems = [
+  { name: "Home", dropdown: null },
+  { name: "About Us", dropdown: ["About Us", "Team"] },
+  { name: "Services", dropdown: ["Services", "Single Services"] },
+  { name: "Pages", dropdown: ["Pricing Plan", "FAQs", "Blog", "404"] },
+];
+
 const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const menuItems = [
-    { name: "Home", dropdown: null },
-    { name: "About Us", dropdown: ["About Us", "Team"] },
-    { name: "Services", dropdown: ["Services", "Single Services"] },
-    { name: "Pages", dropdown: ["Pricing Plan", "FAQs", "Blog", "404"] },
-  ];
 
   return (
     <>
@@ -273,4 +273,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

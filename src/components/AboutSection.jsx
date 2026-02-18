@@ -74,7 +74,13 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           {/* Left Column: Image Block */}
-          <div className="lg:col-span-5 relative group">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="lg:col-span-5 relative group"
+          >
             {/* Layered Cards Behind */}
             <div className="absolute inset-0 bg-white/5 rounded-3xl -rotate-6 translate-x-4 translate-y-2 border border-white/10"></div>
             <div className="absolute inset-0 bg-white/5 rounded-3xl rotate-3 translate-x-2 translate-y-1 border border-white/10"></div>
@@ -94,6 +100,7 @@ const AboutSection = () => {
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop"
                   alt="Team Working"
+                  loading="lazy"
                   className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
                 />
               </div>
@@ -104,6 +111,7 @@ const AboutSection = () => {
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&h=100&auto=format&fit=crop"
                     alt="Ezra Michael"
+                    loading="lazy"
                     className="w-12 h-12 rounded-full border border-white/20 object-cover"
                   />
                   <div>
@@ -117,10 +125,16 @@ const AboutSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Content */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="lg:col-span-7 flex flex-col justify-center"
+          >
             {/* Badge */}
             <div className="flex items-center gap-3 mb-8">
               <div className="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_#a855f7]"></div>
@@ -184,11 +198,11 @@ const AboutSection = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 };
 
-export default AboutSection;
+export default React.memo(AboutSection);

@@ -1,18 +1,26 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const logos = [
+  { name: "LOQO", style: "font-black tracking-tighter italic" },
+  { name: "LOGO", style: "font-bold tracking-[10px] scale-x-75" },
+  { name: "L.iiii!!", style: "font-black text-2xl uppercase" },
+  { name: "LOGO", style: "font-extrabold tracking-widest" },
+  { name: "IPSUM", style: "font-black tracking-tighter uppercase" },
+];
 
 const BrandLogos = () => {
-  const logos = [
-    { name: "LOQO", style: "font-black tracking-tighter italic" },
-    { name: "LOGO", style: "font-bold tracking-[10px] scale-x-75" },
-    { name: "L.iiii!!", style: "font-black text-2xl uppercase" },
-    { name: "LOGO", style: "font-extrabold tracking-widest" },
-    { name: "IPSUM", style: "font-black tracking-tighter uppercase" },
-  ];
-
   return (
-    <div className="py-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8">
+    <div className="py-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 overflow-hidden">
       {logos.map((logo, idx) => (
-        <div key={idx} className="relative group">
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: idx * 0.1 }}
+          className="relative group"
+        >
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl h-20 flex items-center justify-center group uppercase hover:border-white/20 hover:-translate-y-2 transition-all duration-400 cursor-pointer">
             <span
@@ -21,10 +29,10 @@ const BrandLogos = () => {
               {logo.name}
             </span>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
 };
 
-export default BrandLogos;
+export default React.memo(BrandLogos);

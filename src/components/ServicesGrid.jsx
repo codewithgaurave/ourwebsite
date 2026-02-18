@@ -1,36 +1,43 @@
 import React from "react";
 import { ArrowRight, BarChart3, Users, Edit3 } from "lucide-react";
+import { motion } from "framer-motion";
+
+const services = [
+  {
+    title: "ADVANCED ANALYTICS",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec .",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
+    icon: <BarChart3 className="text-white" size={24} />,
+  },
+  {
+    title: "EXPERT CONSULTANCY",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec .",
+    image:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop",
+    icon: <Users className="text-white" size={24} />,
+  },
+  {
+    title: "CONTENT MARKETING",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec .",
+    image:
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop",
+    icon: <Edit3 className="text-white" size={24} />,
+  },
+];
 
 const ServicesGrid = () => {
-  const services = [
-    {
-      title: "ADVANCED ANALYTICS",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec .",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
-      icon: <BarChart3 className="text-white" size={24} />,
-    },
-    {
-      title: "EXPERT CONSULTANCY",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec .",
-      image:
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop",
-      icon: <Users className="text-white" size={24} />,
-    },
-    {
-      title: "CONTENT MARKETING",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec .",
-      image:
-        "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop",
-      icon: <Edit3 className="text-white" size={24} />,
-    },
-  ];
-
   return (
     <section className="py-24" style={{ background: "#0A0C1F" }}>
       <div className="max-w-[1440px] mx-auto px-4 md:px-10">
         {/* Header Box */}
-        <div className="bg-[#141627] backdrop-blur-md border border-white/5 rounded-2xl p-10 md:p-16 mb-16 relative overflow-hidden ">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-[#141627] backdrop-blur-md border border-white/5 rounded-2xl p-10 md:p-16 mb-16 relative overflow-hidden "
+        >
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
             <div className="max-w-3xl">
               {/* Badge */}
@@ -55,12 +62,19 @@ const ServicesGrid = () => {
               </div>
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-24">
           {services.map((service, idx) => (
-            <div key={idx} className="relative py-8 px-4">
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.15 }}
+              className="relative py-8 px-4"
+            >
               {/* This container gives space for the tilted cards peeking out */}
               <div className="relative group isolate h-full">
                 {/* 1st Layer (Backmost) - Tilted Left */}
@@ -69,19 +83,17 @@ const ServicesGrid = () => {
                   style={{ transform: "rotate(-6deg) scale(1.02)" }}
                 ></div>
 
-                {/* 2nd Layer (Middle) - Tilted Right */}
-                {/* <div
-                  className="absolute inset-0 bg-white/[0.02] border border-white/10 rounded-[35px] -z-10 transition-all duration-700"
-                  style={{ transform: "rotate(4deg) scale(1.01)" }}
-                ></div> */}
-
                 {/* Main Card Container */}
                 <div className="relative z-10 bg-[#1a1c2e] border border-white/10 rounded-2xl p-6 shadow-2xl transition-all duration-500 group-hover:border-white/20 h-full flex flex-col">
                   {/* Service Image (Rounded edges) */}
-                  <div className="rounded-2xl overflow-hidden aspect-[1/1] mb-8 relative" style={{ transform: "rotate(4deg) scale(1.01)" }}>
+                  <div
+                    className="rounded-2xl overflow-hidden aspect-[1/1] mb-8 relative"
+                    style={{ transform: "rotate(4deg) scale(1.01)" }}
+                  >
                     <img
                       src={service.image}
                       alt={service.title}
+                      loading="lazy"
                       className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                     />
                     {/* Subtle overlay gradient */}
@@ -130,7 +142,7 @@ const ServicesGrid = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -138,4 +150,4 @@ const ServicesGrid = () => {
   );
 };
 
-export default ServicesGrid;
+export default React.memo(ServicesGrid);

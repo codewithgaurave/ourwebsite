@@ -1,42 +1,49 @@
 import React from "react";
 import { Quote, Star } from "lucide-react";
+import { motion } from "framer-motion";
+
+const testimonials = [
+  {
+    name: "HAZEL LILY",
+    role: "Our Client",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop",
+    rating: 5,
+    isFeatured: false,
+  },
+  {
+    name: "OWEN SAMUEL",
+    role: "Our Client",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop",
+    rating: 5,
+    isFeatured: true,
+  },
+  {
+    name: "DANIEL LEO",
+    role: "Our Client",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
+    rating: 5,
+    isFeatured: false,
+  },
+];
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "HAZEL LILY",
-      role: "Our Client",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop",
-      rating: 5,
-      isFeatured: false,
-    },
-    {
-      name: "OWEN SAMUEL",
-      role: "Our Client",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop",
-      rating: 5,
-      isFeatured: true,
-    },
-    {
-      name: "DANIEL LEO",
-      role: "Our Client",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
-      rating: 5,
-      isFeatured: false,
-    },
-  ];
-
   return (
     <section className="py-24 px-4 md:px-10 bg-[#0A0C1F]">
       <div className="max-w-[1440px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-24"
+        >
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
             <span className="text-white/60 text-sm font-medium uppercase tracking-[3px]">
@@ -47,13 +54,17 @@ const Testimonials = () => {
             HEAR IT FROM THOSE WHO <br />
             KNOW US BEST.
           </h2>
-        </div>
+        </motion.div>
 
         {/* Testimonials Container - Flex for precise width control */}
         <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 pt-0 max-w-7xl mx-auto px-4">
           {testimonials.map((testimonial, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.15 }}
               className={`relative flex flex-col transition-all duration-500 hover:-translate-y-2 cursor-default ${
                 testimonial.isFeatured ? "lg:flex-[1.2] z-10" : "lg:flex-1"
               }`}
@@ -71,6 +82,7 @@ const Testimonials = () => {
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
+                      loading="lazy"
                       className="w-full h-full object-cover grayscale-[0.1]"
                     />
                   </div>
@@ -132,7 +144,7 @@ const Testimonials = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -140,4 +152,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default React.memo(Testimonials);

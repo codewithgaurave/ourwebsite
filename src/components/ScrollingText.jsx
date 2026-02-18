@@ -1,22 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const ScrollingText = () => {
-  const words = [
-    "EXECUTION",
-    "SUCCESS",
-    "STRATEGIC",
-    "OPTIMIZATION",
-    "GROWTH",
-    "VISIBILITY",
-    "EXECUTION",
-    "SUCCESS",
-    "STRATEGIC",
-    "OPTIMIZATION",
-    "GROWTH",
-    "VISIBILITY",
-  ];
+const words = [
+  "EXECUTION",
+  "SUCCESS",
+  "STRATEGIC",
+  "OPTIMIZATION",
+  "GROWTH",
+  "VISIBILITY",
+  "EXECUTION",
+  "SUCCESS",
+  "STRATEGIC",
+  "OPTIMIZATION",
+  "GROWTH",
+  "VISIBILITY",
+];
 
+const ScrollingText = () => {
   return (
     <div className="w-full px-4 md:px-10 mb-10 -mt-10">
       <div className="w-full max-w-[1440px] mx-auto bg-white/5 backdrop-blur-sm border border-white/10 py-6 rounded-2xl overflow-hidden relative">
@@ -62,4 +62,4 @@ const ScrollingText = () => {
   );
 };
 
-export default ScrollingText;
+export default React.memo(ScrollingText);

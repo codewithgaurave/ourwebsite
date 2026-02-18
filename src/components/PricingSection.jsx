@@ -2,47 +2,47 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const PricingSection = () => {
-  const plans = [
-    {
-      name: "Basic Plan",
-      price: "31.99",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.",
-      features: [
-        "Lorem ipsum dolor sit amet consectetur",
-        "elit sed eiusmod tempor incididunt ut labor",
-        "quis nostrud exercitation ullamco laboris nisi",
-      ],
-      isPopular: false,
-      color: "purple",
-    },
-    {
-      name: "Premium Plan",
-      price: "76.99",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.",
-      features: [
-        "Lorem ipsum dolor sit amet consectetur",
-        "elit sed eiusmod tempor incididunt ut labor",
-        "quis nostrud exercitation ullamco laboris nisi",
-        "Quis autem vel eum iure reprehenderit qui",
-      ],
-      isPopular: true,
-      color: "blue",
-    },
-    {
-      name: "Basic Plan",
-      price: "46.99",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.",
-      features: [
-        "Lorem ipsum dolor sit amet consectetur",
-        "elit sed eiusmod tempor incididunt ut labor",
-        "quis nostrud exercitation ullamco laboris nisi",
-      ],
-      isPopular: false,
-      color: "purple",
-    },
-  ];
+const plans = [
+  {
+    name: "Basic Plan",
+    price: "31.99",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.",
+    features: [
+      "Lorem ipsum dolor sit amet consectetur",
+      "elit sed eiusmod tempor incididunt ut labor",
+      "quis nostrud exercitation ullamco laboris nisi",
+    ],
+    isPopular: false,
+    color: "purple",
+  },
+  {
+    name: "Premium Plan",
+    price: "76.99",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.",
+    features: [
+      "Lorem ipsum dolor sit amet consectetur",
+      "elit sed eiusmod tempor incididunt ut labor",
+      "quis nostrud exercitation ullamco laboris nisi",
+      "Quis autem vel eum iure reprehenderit qui",
+    ],
+    isPopular: true,
+    color: "blue",
+  },
+  {
+    name: "Basic Plan",
+    price: "46.99",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.",
+    features: [
+      "Lorem ipsum dolor sit amet consectetur",
+      "elit sed eiusmod tempor incididunt ut labor",
+      "quis nostrud exercitation ullamco laboris nisi",
+    ],
+    isPopular: false,
+    color: "purple",
+  },
+];
 
+const PricingSection = () => {
   return (
     <section
       className="py-24 px-4 md:px-10"
@@ -53,24 +53,34 @@ const PricingSection = () => {
     >
       <div className="max-w-[1440px] mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-2.5 h-2.5 rounded-full bg-[#6B3A5B]"></div>
             <span className="text-white/60 text-sm font-medium uppercase tracking-[2px]">
-              Featured Services
+              Our Pricing
             </span>
           </div>
           <h2 className="text-[36px] md:text-[56px] lg:text-6xl font-[300] font-unbounded text-white leading-[1.1] uppercase tracking-tighter max-w-4xl mx-auto">
             SMART PRICING FOR <br />
             SMART CHOICES.
           </h2>
-        </div>
+        </motion.div>
 
         {/* Pricing Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-end ">
           {plans.map((plan, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
               className={`relative group ${plan.isPopular ? "z-10" : "z-0"}`}
             >
               {/* Popular Highlight - Outer Glow */}
@@ -80,7 +90,7 @@ const PricingSection = () => {
 
               {/* Main Card */}
               <div
-                className={`relative px-8 py-12 rounded-[32px] border transition-all duration-500 flex flex-col h-full hover:translate-y-[-10px] transition-all duration-300 cursor-pointer ${
+                className={`relative px-8 py-12 rounded-[32px] border transition-all duration-500 flex flex-col h-full hover:translate-y-[-10px] cursor-pointer ${
                   plan.isPopular
                     ? "border-white/20 shadow-[0_0_60px_rgba(74,98,132,0.2)] min-h-[780px]"
                     : "bg-white/[0.03] border-white/5 hover:border-white/10 min-h-[700px]"
@@ -89,7 +99,6 @@ const PricingSection = () => {
                   plan.isPopular
                     ? {
                         background:
-                          // "linear-gradient(to bottom right, #404F62, #1B2737, #4A6284, #2F213B)",
                           "linear-gradient(to bottom right, #1B2737, #404F62, #373250, #4A6284)",
                       }
                     : {}
@@ -165,7 +174,7 @@ const PricingSection = () => {
                   adipiscing ultrices elit felis et leo
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -173,4 +182,4 @@ const PricingSection = () => {
   );
 };
 
-export default PricingSection;
+export default React.memo(PricingSection);

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="relative w-full p-6 sm:p-10 md:p-16 flex flex-col justify-center min-h-[85vh] md:min-h-screen overflow-hidden">
+    <div className="relative w-full px-6 sm:px-10 md:px-16 pt-32 pb-16 md:pt-40 md:pb-32 flex flex-col justify-center min-h-[85vh] md:min-h-screen overflow-hidden">
       {/* Background Gradient Layer */}
       <div
         className="absolute inset-0 -z-20 scale-110"

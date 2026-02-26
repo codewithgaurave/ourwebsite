@@ -4,27 +4,27 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "HAZEL LILY",
+    name: "Rekha Gupta",
     role: "Our Client",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    text: "Working with this team was a great experience. Their digital marketing strategies significantly improved our online presence and helped us attract more customers.",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop",
     rating: 5,
     isFeatured: false,
   },
   {
-    name: "OWEN SAMUEL",
+    name: "Abhay Sharma",
     role: "Our Client",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    text: "Excellent service and professional approach. Their SEO and marketing solutions delivered measurable results and boosted our business visibility effectively.",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop",
     rating: 5,
     isFeatured: true,
   },
   {
-    name: "DANIEL LEO",
+    name: "Irshad Singh",
     role: "Our Client",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    text: "Highly satisfied with the quality of work. The team delivered on time and helped us achieve better engagement and business growth online.",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
     rating: 5,

@@ -49,12 +49,12 @@ const AboutSection = () => {
     {
       icon: <Megaphone size={20} className="text-white" />,
       title: "MARKETING AGENCY",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.",
+      desc: "We create result-focused marketing strategies that increase brand awareness, generate quality leads, and drive measurable business growth across digital platforms.",
     },
     {
       icon: <Search size={20} className="text-white" />,
       title: "SEO SERVICES",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.",
+      desc: "Our SEO experts improve your search rankings through technical optimization, smart keyword targeting, and content strategies that boost organic traffic.",
     },
   ];
 

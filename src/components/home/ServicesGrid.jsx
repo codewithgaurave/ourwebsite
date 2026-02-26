@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 const services = [
   {
     title: "ADVANCED ANALYTICS",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec .",
+    desc: "Gain valuable insights through advanced analytics tools that track performance, user behavior, and marketing effectiveness to improve business decisions.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
     icon: <BarChart3 className="text-white" size={24} />,
   },
   {
     title: "EXPERT CONSULTANCY",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec .",
+    desc: "Get professional guidance from industry experts to choose the right digital strategies, technologies, and solutions for sustainable business growth.",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop",
     icon: <Users className="text-white" size={24} />,
   },
   {
     title: "CONTENT MARKETING",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec .",
+    desc: "Build strong brand presence with high-quality content strategies that attract audiences, increase engagement, and improve conversion rates.",
     image:
       "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop",
     icon: <Edit3 className="text-white" size={24} />,

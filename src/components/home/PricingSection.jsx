@@ -6,11 +6,11 @@ const plans = [
   {
     name: "Basic Plan",
     price: "31.99",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.",
+    desc: "Perfect for startups and small businesses looking to establish a strong online presence with essential digital marketing services.",
     features: [
-      "Lorem ipsum dolor sit amet consectetur",
-      "elit sed eiusmod tempor incididunt ut labor",
-      "quis nostrud exercitation ullamco laboris nisi",
+      "Basic SEO Optimization",
+      "Monthly Performance Reports",
+      "Email Support Included",
     ],
     isPopular: false,
     color: "purple",
@@ -18,24 +18,23 @@ const plans = [
   {
     name: "Premium Plan",
     price: "76.99",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.",
+    desc: "Advanced digital marketing solution designed for businesses aiming for higher visibility, better engagement, and faster growth..",
     features: [
-      "Lorem ipsum dolor sit amet consectetur",
-      "elit sed eiusmod tempor incididunt ut labor",
-      "quis nostrud exercitation ullamco laboris nisi",
-      "Quis autem vel eum iure reprehenderit qui",
+      "Advanced SEO & PPC Campaigns",
+      "Detailed Analytics Reports",
+      "Priority Support Access",
     ],
     isPopular: true,
     color: "blue",
   },
   {
-    name: "Basic Plan",
+    name: "STANDARD PLAN",
     price: "46.99",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.",
+    desc: "Balanced marketing package offering improved visibility, optimized campaigns, and steady business growth support.",
     features: [
-      "Lorem ipsum dolor sit amet consectetur",
-      "elit sed eiusmod tempor incididunt ut labor",
-      "quis nostrud exercitation ullamco laboris nisi",
+      "Standard SEO Optimization",
+      "Campaign Performance Tracking",
+      "Dedicated Email Support",
     ],
     isPopular: false,
     color: "purple",
@@ -170,8 +169,7 @@ const PricingSection = () => {
 
                 {/* Disclaimer Footer */}
                 <p className="mt-10 text-[12px] text-white/30 italic leading-relaxed">
-                  *Viverra ullamcorper consectetuer interdum mus <br />
-                  adipiscing ultrices elit felis et leo
+                  *Perfect balance between affordability and performance
                 </p>
               </div>
             </motion.div>

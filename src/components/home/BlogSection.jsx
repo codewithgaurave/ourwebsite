@@ -10,7 +10,7 @@ const blogs = [
     category: "Uncategorized",
     title: "RIGHT SEO AGENCY",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Choosing the right SEO agency can improve your online visibility, increase website traffic, and help your business achieve sustainable digital growth.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
   },
@@ -21,7 +21,7 @@ const blogs = [
     category: "Uncategorized",
     title: "COMMON SEO MISTAKES",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "Avoid common SEO mistakes like poor keyword targeting, slow website speed, and weak content strategy to achieve better search rankings.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
   },
@@ -32,7 +32,7 @@ const blogs = [
     category: "Uncategorized",
     title: "DIGITAL SEO PARTNER",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "A reliable digital SEO partner helps businesses grow faster by improving search visibility, optimizing performance, and driving quality leads.",
     image:
       "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800",
   },

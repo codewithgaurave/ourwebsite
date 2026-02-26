@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
-import Hero from "../../components/Hero";
-import BrandLogos from "../../components/BrandLogos";
-import FeaturedServices from "../../components/FeaturedServices";
-import AboutSection from "../../components/AboutSection";
-import ScrollingText from "../../components/ScrollingText";
-import ServicesGrid from "../../components/ServicesGrid";
-import PricingSection from "../../components/PricingSection";
-import Testimonials from "../../components/Testimonials";
-import FaqSection from "../../components/FaqSection";
-import BlogSection from "../../components/BlogSection";
+import Hero from "../../components/home/Hero";
+import BrandLogos from "../../components/home/BrandLogos";
+import FeaturedServices from "../../components/home/FeaturedServices";
+import AboutSection from "../../components/home/AboutSection";
+import ScrollingText from "../../components/home/ScrollingText";
+import ServicesGrid from "../../components/home/ServicesGrid";
+import PricingSection from "../../components/home/PricingSection";
+import Testimonials from "../../components/home/Testimonials";
+import FaqSection from "../../components/home/FaqSection";
+import BlogSection from "../../components/home/BlogSection";
 import Footer from "../../components/Footer";
 
 const Home = () => {

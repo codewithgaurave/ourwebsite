@@ -57,9 +57,9 @@ const Hero = () => {
                   d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
                   fill="transparent"
                 />
-                <text className="fill-white/30 text-[8px] uppercase font-unbounded tracking-[3px]">
+                <text className="fill-white/30 text-[8px] uppercase text-start font-unbounded tracking-[3px]">
                   <textPath xlinkHref="#circlePath">
-                    Smarter * Grow Faster * Smarter *{" "}
+                    Optimizing * Grow Faster * Digital *{" "}
                   </textPath>
                 </text>
               </svg>
@@ -71,16 +71,16 @@ const Hero = () => {
         </motion.div>
 
         {/* Right Section (Titles and Description) */}
-        <div className="lg:col-span-8 flex flex-col items-center lg:items-end justify-center w-full">
+        <div className="lg:col-span-8 flex flex-col items-center lg:items-start justify-center w-full">
           {/* Headings Block - Using flex to force single lines */}
-          <div className="w-full flex flex-col items-center lg:items-end mb-10 lg:mb-16 relative font-unbounded text-white uppercase select-none space-y-2 lg:space-y-0">
+          <div className="w-full flex flex-col items-center lg:items-start mb-10 lg:mb-16 relative font-unbounded text-white uppercase select-none space-y-2 lg:space-y-0">
             {/* OPTIMIZING */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex items-center justify-center lg:justify-end w-full"
+              className="flex items-center justify-center lg:justify-start w-full"
             >
               <h1 className="text-[34px] sm:text-[54px] md:text-[74px] lg:text-[100px] 2xl:text-[110px] font-bold whitespace-nowrap flex items-center">
                 <span className="relative inline-block px-2 sm:px-4 ml-[-8px]">
@@ -95,9 +95,9 @@ const Hero = () => {
                         "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
                     }}
                   ></motion.div>
-                  OPTIM
+                  DIGI
                 </span>
-                IZING
+                TAL
               </h1>
             </motion.div>
 
@@ -107,10 +107,10 @@ const Hero = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex items-center justify-center lg:justify-end w-full lg:-mt-6 2xl:-mt-10 lg:mr-12"
+              className="flex items-center justify-center lg:justify-start w-full lg:-mt-6 2xl:-mt-10 lg:ml-12"
             >
               <h1 className="text-[34px] sm:text-[54px] md:text-[74px] lg:text-[100px] 2xl:text-[110px] font-bold whitespace-nowrap flex items-center tracking-tighter">
-                VISIB
+                GRO
                 <span className="relative inline-block px-2 sm:px-4 ml-1">
                   <motion.div
                     initial={{ scaleX: 0 }}
@@ -123,7 +123,7 @@ const Hero = () => {
                         "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
                     }}
                   ></motion.div>
-                  ILITY
+                  WTH
                 </span>
               </h1>
             </motion.div>
@@ -135,16 +135,26 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="w-full max-w-xl flex flex-col items-center lg:items-end lg:mr-16 text-center lg:text-right px-4"
+            className="w-full max-w-xl flex flex-col items-center lg:items-start lg:ml-16 text-center lg:text-left px-4"
           >
-            <p className="text-gray-300 text-[14px] sm:text-[16px] md:text-[18px] font-medium leading-relaxed mb-10 max-w-[500px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            <p className="text-gray-300 text-[14px] sm:text-[16px] md:text-[18px] font-medium leading-relaxed mb-6 max-w-[600px]">
+              <span className="text-white font-bold block mb-2 text-lg sm:text-xl">
+                Optimizing Digital Growth for Your Business
+              </span>
+              <span className="block mb-2 text-sm sm:text-base text-gray-400">
+                We build powerful software, modern websites, and result-driven
+                SEO strategies to help your business grow faster in the digital
+                world.
+              </span>
+              From custom software development to high-performance websites and
+              advanced SEO solutions, we deliver technology that drives real
+              business results. Our goal is simple — increase your visibility,
+              improve efficiency, and accelerate growth.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6 lg:gap-8 justify-center lg:justify-end w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-6 lg:gap-8 justify-center lg:justify-start w-full sm:w-auto">
               <button className="flex items-center gap-3 border-2 border-white/10 px-8 lg:px-10 py-4 lg:py-[18px] rounded-full text-[13px] lg:text-sm font-bold uppercase tracking-[2px] text-white cursor-pointer bg-white/[0.02] hover:bg-white/[0.05] transition-all group w-full sm:w-auto justify-center">
-                Learn More
+                Get Started
                 <span className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10">
                   <ArrowRight
                     size={16}
@@ -153,16 +163,15 @@ const Hero = () => {
                 </span>
               </button>
 
-              <div className="relative group cursor-pointer h-16 w-16">
-                <div className="absolute inset-0 bg-white/10 rounded-full animate-ping opacity-20"></div>
-                <div className="relative w-16 h-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-2xl overflow-hidden">
+              <button className="flex items-center gap-3 border-2 border-white/10 px-8 lg:px-10 py-4 lg:py-[18px] rounded-full text-[13px] lg:text-sm font-bold uppercase tracking-[2px] text-white cursor-pointer bg-white/[0.02] hover:bg-white/[0.05] transition-all group w-full sm:w-auto justify-center">
+                Contact Us
+                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10">
                   <Play
-                    size={20}
-                    fill="white"
-                    className="ml-1 text-white relative z-10"
+                    size={16}
+                    className="group-hover:scale-110 transition-transform"
                   />
-                </div>
-              </div>
+                </span>
+              </button>
             </div>
           </motion.div>
         </div>

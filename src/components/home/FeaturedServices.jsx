@@ -8,13 +8,13 @@ const services = [
       <Rocket className="w-12 h-12 text-white/40 group-hover:text-purple-400 transition-colors" />
     ),
     title: "SEO OPTIMIZATION",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    desc: "Improve your website ranking with advanced SEO techniques, keyword research, and optimization strategies designed to increase organic traffic.",
     active: false,
   },
   {
     icon: <MousePointer2 className="w-12 h-12 text-purple-400" />,
     title: "PAY PER CLICK",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    desc: "Run high-converting ad campaigns that drive instant traffic, quality leads, and measurable business growth through strategic PPC management.",
     active: true,
   },
   {
@@ -22,7 +22,7 @@ const services = [
       <Search className="w-12 h-12 text-white/40 group-hover:text-purple-400 transition-colors" />
     ),
     title: "ADVANCED ANALYTIC",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    desc: "Track performance, analyze user behavior, and make data-driven decisions with powerful analytics tools for better marketing results.",
     active: false,
   },
   {
@@ -30,7 +30,7 @@ const services = [
       <Video className="w-12 h-12 text-white/40 group-hover:text-purple-400 transition-colors" />
     ),
     title: "VIDEO MARKETING",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    desc: "Engage your audience with impactful video marketing strategies that boost brand awareness, improve engagement, and drive conversions.",
     active: false,
   },
 ];
@@ -69,10 +69,9 @@ const FeaturedServices = () => {
             BOOST YOUR WEBSITE TRAFFIC!
           </h2>
           <p className="text-white text-[14px] md:text-[15px] text-left max-w-2xl leading-[1.8] font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            We help businesses grow online through smart SEO strategies,
+            targeted marketing, and performance-driven digital solutions that
+            increase visibility, traffic, and conversions effectively.
           </p>
         </motion.div>
       </div>
@@ -86,7 +85,7 @@ const FeaturedServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className={`relative group p-6 rounded-2xl border transition-all duration-400 overflow-hidden h-[220px] flex flex-col justify-between cursor-pointer hover:-translate-y-3 ${
+            className={`relative group p-6 rounded-2xl border transition-all duration-400 overflow-hidden min-h-[280px] flex flex-col justify-between cursor-pointer hover:-translate-y-3 ${
               service.active
                 ? "bg-gradient-to-br from-[#1c1d3a] to-[#0A0C1F] border-white/20 shadow-2xl"
                 : "bg-white/[0.03] border-white/5 hover:bg-white/[0.08] hover:border-white/20"

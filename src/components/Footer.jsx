@@ -1,5 +1,6 @@
 import React from "react";
 import { Facebook, Twitter, Youtube, Phone, Send } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const scrollingText = [
@@ -61,8 +62,9 @@ const Footer = () => {
                 />
               </div>
               <p className="text-white/40 text-[16px] leading-[1.8] font-medium max-w-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis.
+                We deliver innovative digital solutions including website
+                development, software services, and SEO strategies to help
+                businesses grow online successfully.
               </p>
             </div>
 
@@ -98,16 +100,30 @@ const Footer = () => {
                 <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-purple-500"></span>
               </h4>
               <ul className="space-y-4">
-                {["Home", "Pages", "About Us", "Services"].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="text-white/40 hover:text-white text-[15px] transition-colors"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
+                {["Home", "About Us", "Team", "Services", "Pricing Plan"].map(
+                  (item) => (
+                    <li key={item}>
+                      <Link
+                        to={
+                          item === "About Us"
+                            ? "/about-us"
+                            : item === "Team"
+                              ? "/team"
+                              : item === "Services"
+                                ? "/services"
+                                : item === "Pricing Plan"
+                                  ? "/pricing"
+                                  : item === "Home"
+                                    ? "/"
+                                    : "#"
+                        }
+                        className="text-white/40 hover:text-white text-[15px] transition-colors"
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
             <div>
@@ -116,16 +132,30 @@ const Footer = () => {
                 <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-purple-500"></span>
               </h4>
               <ul className="space-y-4">
-                {["Pages", "Contact", "About Us", "404"].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="text-white/40 hover:text-white text-[15px] transition-colors"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
+                {["Home", "About Us", "Team", "Services", "Blog"].map(
+                  (item) => (
+                    <li key={item}>
+                      <Link
+                        to={
+                          item === "About Us"
+                            ? "/about-us"
+                            : item === "Team"
+                              ? "/team"
+                              : item === "Services"
+                                ? "/services"
+                                : item === "Blog"
+                                  ? "/blog"
+                                  : item === "Home"
+                                    ? "/"
+                                    : "#"
+                        }
+                        className="text-white/40 hover:text-white text-[15px] transition-colors"
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
             <div>
@@ -136,12 +166,20 @@ const Footer = () => {
               <ul className="space-y-4">
                 {["Contact Us", "FAQs", "Booking", "Services"].map((item) => (
                   <li key={item}>
-                    <a
-                      href="#"
+                    <Link
+                      to={
+                        item === "Contact Us"
+                          ? "/contact"
+                          : item === "FAQs"
+                            ? "/faqs"
+                            : item === "Services"
+                              ? "/services"
+                              : "#"
+                      }
                       className="text-white/40 hover:text-white text-[15px] transition-colors"
                     >
                       {item}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

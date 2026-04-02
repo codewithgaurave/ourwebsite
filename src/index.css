@@ -4,6 +4,37 @@
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-syne: "Syne", sans-serif;
   --font-unbounded: "Unbounded", sans-serif;
+
+  /* ─── Optivexa Color Tokens ─── */
+
+  /* Backgrounds */
+  --color-ovx-bg-primary:    #0A0510;
+  --color-ovx-bg-secondary:  #0A0C1F;
+  --color-ovx-bg-tertiary:   #0b0612;
+  --color-ovx-bg-hero:       #110c18;
+  --color-ovx-bg-card:       #141627;
+  --color-ovx-bg-card-inner: #1a1c2e;
+  --color-ovx-bg-overlay:    #0a051080;
+
+  /* Accents */
+  --color-ovx-purple:        #9333ea;
+  --color-ovx-purple-light:  #a855f7;
+  --color-ovx-purple-dark:   #6B3A5B;
+  --color-ovx-purple-muted:  #4B2A40;
+  --color-ovx-purple-btn:    #6B3054;
+  --color-ovx-purple-btn-h:  #823b66;
+  --color-ovx-blue-accent:   #2b5ba3;
+  --color-ovx-blue-muted:    #324054;
+  --color-ovx-violet-muted:  #403B52;
+
+  /* Scrollbar */
+  --color-ovx-scroll-track:  #0d0b14;
+  --color-ovx-scroll-thumb:  #2a1f3d;
+  --color-ovx-scroll-hover:  #3d2b5e;
+
+  /* Glows */
+  --color-ovx-glow-purple:   rgba(168, 85, 247, 0.3);
+  --color-ovx-glow-blue:     rgba(43, 91, 163, 0.3);
 }
 
 :root {
@@ -11,7 +42,7 @@
 }
 
 body {
-  background-color: #0a0510;
+  background-color: var(--color-ovx-bg-primary);
   color: white;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -19,61 +50,70 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
+/* ─── Custom Scrollbar ─── */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d0b14;
+  background: var(--color-ovx-scroll-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a1f3d;
+  background: var(--color-ovx-scroll-thumb);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3d2b5e;
+  background: var(--color-ovx-scroll-hover);
 }
 
 ::selection {
-  background-color: #9333ea;
+  background-color: var(--color-ovx-purple);
   color: white;
 }
 
+/* ─── Animations ─── */
 @keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 .animate-spin-slow {
   animation: spin-slow 15s linear infinite;
 }
 
-/* Wave Pulse Animation for Play Button */
 @keyframes wave-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0;   }
 }
 
 .animate-wave {
   animation: wave-pulse 2s infinite;
 }
 
-/* Custom Text Outline/Shadow for some styles if needed */
+/* ─── Utility Classes ─── */
 .text-stroke {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Gradient Presets (reusable classes) ─── */
+.bg-gradient-section {
+  background: linear-gradient(to right, #0A0510, #3C3243, #434456, #283645, #1A2533);
+}
+
+.bg-gradient-cta {
+  background: linear-gradient(133deg, #404D5F 0%, #2D2333 100%);
+}
+
+.bg-gradient-pricing-card {
+  background: linear-gradient(to bottom right, #1B2737, #404F62, #373250, #4A6284);
+}
+
+.bg-gradient-footer {
+  background: linear-gradient(to right, #261221, #2A1625, #342C3B, #0A0C1F, #25303B, #0A0C1F);
+}
+
+.bg-gradient-cta-section {
+  background: linear-gradient(to bottom right, #1a0b2e, #0a0510);
 }

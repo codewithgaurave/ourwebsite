@@ -106,7 +106,7 @@ const services = [
 
 const ServicesGrid = () => {
   return (
-    <section className="py-24" style={{ background: "#0A0C1F" }}>
+    <section className="py-12 sm:py-16 md:py-24" style={{ background: "#0A0C1F" }}>
       <div className="max-w-[1440px] mx-auto px-4 md:px-10">
         {/* Header Box */}
         <motion.div
@@ -114,36 +114,34 @@ const ServicesGrid = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-[#141627] backdrop-blur-md border border-white/5 rounded-2xl p-10 md:p-16 mb-16 relative overflow-hidden"
+          className="bg-[#141627] backdrop-blur-md border border-white/5 rounded-xl md:rounded-2xl p-6 sm:p-8 md:p-16 mb-8 sm:mb-12 md:mb-16 relative overflow-hidden"
         >
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 md:gap-8">
             <div className="max-w-3xl">
-              {/* Badge */}
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4 md:mb-6">
                 <div className="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_#a855f7]"></div>
-                <span className="text-sm font-bold tracking-[4px] uppercase text-white/50">
+                <span className="text-xs sm:text-sm font-bold tracking-[2px] md:tracking-[4px] uppercase text-white/50">
                   Featured Services
                 </span>
               </div>
-              {/* Heading */}
-              <h2 className="text-[32px] md:text-[45px] lg:text-5xl font-[300] font-unbounded text-white uppercase leading-[1.2] tracking-tight">
+              <h2 className="text-[22px] sm:text-[28px] md:text-[40px] lg:text-5xl font-[300] font-unbounded text-white uppercase leading-[1.2] tracking-tight">
                 COMPREHENSIVE DIGITAL SOLUTIONS. SEAMLESS RESULTS.
               </h2>
             </div>
-            {/* Learn More Button */}
-            <Link to="/services" className="flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 hover:px-7 cursor-pointer hover:py-3 transition-all duration-300 group">
-              <span className="text-white font-[300] text-sm uppercase tracking-wider">
+            <Link to="/services" className="flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 rounded-full border border-white/10 hover:px-6 cursor-pointer hover:py-3 transition-all duration-300 group">
+              <span className="text-white font-[300] text-xs sm:text-sm uppercase tracking-wider">
                 Learn More
               </span>
-              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
-                <ArrowRight size={16} className="text-white" />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
+                <ArrowRight size={14} className="text-white sm:hidden" />
+                <ArrowRight size={16} className="text-white hidden sm:block" />
               </div>
             </Link>
           </div>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 sm:gap-x-7 gap-y-16 sm:gap-y-20 md:gap-y-24">
           {services.map((service, idx) => (
             <motion.div
               key={idx}

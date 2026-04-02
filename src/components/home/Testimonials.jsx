@@ -55,7 +55,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ testimonial, isActive }) => (
-  <div className="flex-shrink-0 w-full md:w-[calc(33.333%-22px)] relative pt-16 group">
+  <div className="flex-shrink-0 w-full md:w-[calc(33.333%-22px)] relative pt-14 md:pt-16 group">
     {/* Profile Image */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
       <div
@@ -164,7 +164,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="py-24 px-4 md:px-10 bg-[#0A0C1F] overflow-hidden">
+    <section className="py-16 md:py-24 px-4 md:px-10 bg-[#0A0C1F] overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         {/* Header */}
         <motion.div
@@ -172,15 +172,15 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-14 md:mb-20"
         >
-          <div className="flex items-center justify-center gap-2 mb-6">
+          <div className="flex items-center justify-center gap-2 mb-4 md:mb-6">
             <div className="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
-            <span className="text-white/60 text-sm font-medium uppercase tracking-[3px]">
+            <span className="text-white/60 text-xs md:text-sm font-medium uppercase tracking-[2px] md:tracking-[3px]">
               Our Testimonials
             </span>
           </div>
-          <h2 className="text-[32px] md:text-[44px] lg:text-[52px] font-[300] font-unbounded text-white leading-[1.1] uppercase tracking-tighter max-w-4xl mx-auto">
+          <h2 className="text-[26px] sm:text-[32px] md:text-[44px] lg:text-[52px] font-[300] font-unbounded text-white leading-[1.1] uppercase tracking-tighter max-w-4xl mx-auto">
             HEAR IT FROM THOSE WHO <br className="hidden md:block" />
             KNOW US BEST.
           </h2>

@@ -57,7 +57,7 @@ const plans = [
 const PricingSection = () => {
   return (
     <section
-      className="py-24 px-4 md:px-10"
+      className="py-16 md:py-24 px-4 md:px-10"
       style={{
         background:
           "linear-gradient(to right, #281926, #37313F, #3F4A5A, #25303D)",
@@ -70,22 +70,22 @@ const PricingSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-2.5 h-2.5 rounded-full bg-[#6B3A5B]"></div>
-            <span className="text-white/60 text-sm font-medium uppercase tracking-[2px]">
+            <span className="text-white/60 text-xs md:text-sm font-medium uppercase tracking-[2px]">
               Our Pricing
             </span>
           </div>
-          <h2 className="text-[36px] md:text-[56px] lg:text-6xl font-[300] font-unbounded text-white leading-[1.1] uppercase tracking-tighter max-w-4xl mx-auto">
+          <h2 className="text-[26px] sm:text-[32px] md:text-[48px] lg:text-6xl font-[300] font-unbounded text-white leading-[1.1] uppercase tracking-tighter max-w-4xl mx-auto">
             SMART PRICING FOR <br />
             SMART CHOICES.
           </h2>
         </motion.div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-end ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-end ">
           {plans.map((plan, idx) => (
             <motion.div
               key={idx}
@@ -102,10 +102,10 @@ const PricingSection = () => {
 
               {/* Main Card */}
               <div
-                className={`relative px-8 py-12 rounded-[32px] border transition-all duration-500 flex flex-col h-full hover:translate-y-[-10px] cursor-pointer ${
+                className={`relative px-5 sm:px-6 md:px-8 py-8 md:py-12 rounded-2xl md:rounded-[32px] border transition-all duration-500 flex flex-col h-full hover:translate-y-[-10px] cursor-pointer ${
                   plan.isPopular
-                    ? "border-white/20 shadow-[0_0_60px_rgba(74,98,132,0.2)] min-h-[780px]"
-                    : "bg-white/[0.03] border-white/5 hover:border-white/10 min-h-[700px]"
+                    ? "border-white/20 shadow-[0_0_60px_rgba(74,98,132,0.2)] min-h-[600px] md:min-h-[780px]"
+                    : "bg-white/[0.03] border-white/5 hover:border-white/10 min-h-[550px] md:min-h-[700px]"
                 }`}
                 style={
                   plan.isPopular
@@ -134,8 +134,8 @@ const PricingSection = () => {
                 </div>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-[64px] font-[300] font-unbounded text-white leading-none">
+                <div className="flex items-baseline gap-2 mb-6 md:mb-8">
+                  <span className="text-[48px] md:text-[64px] font-[300] font-unbounded text-white leading-none">
                     ${plan.price}
                   </span>
                   <span className="text-white/40 font-medium text-lg">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ArrowUpCircle, ArrowDownCircle, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const faqs = [
   {
@@ -167,9 +168,9 @@ const FaqSection = () => {
             transition={{ duration: 0.8 }}
             className="flex-shrink-0 mt-10 px-9 py-4 hover:py-5 hover:px-10 cursor-pointer rounded-full border border-white/10  transition-all duration-500 flex items-center gap-4 group"
           >
-            <span className="text-[12px] font-[700] text-white uppercase tracking-[2px]">
+            <Link to='/faqs' className="text-[12px] font-[700] text-white uppercase tracking-[2px]">
               Learn More
-            </span>
+            </Link>
             <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-all duration-500">
               <ArrowRight
                 size={14}

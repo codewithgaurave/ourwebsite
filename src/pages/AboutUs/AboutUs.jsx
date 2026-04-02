@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { motion } from "framer-motion";
@@ -414,9 +415,9 @@ const AboutUs = () => {
                 world? Let's build something extraordinary together — from mobile apps
                 to web applications, games, desktop software, cloud solutions, and enterprise systems.
               </p>
-              <button className="px-10 py-5 bg-linear-to-r from-purple-600 to-blue-600 rounded-full text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(147,51,234,0.5)] transform hover:scale-105 transition-all outline-none">
+              <Link to="/contact" className="px-10 py-5 bg-linear-to-r from-purple-600 to-blue-600 rounded-full text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(147,51,234,0.5)] transform hover:scale-105 transition-all outline-none">
                 Start Your Project
-              </button>
+              </Link>
             </div>
           </motion.div>
         </section>

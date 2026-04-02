@@ -1,6 +1,7 @@
 import React from "react";
 import { User, FolderOpen, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const blogs = [
   {
@@ -126,9 +127,9 @@ const BlogSection = () => {
 
                 {/* Action */}
                 <button className="flex items-center gap-3 px-6 py-3 rounded-2xl cursor-pointer bg-purple-900/20 border border-purple-500/20 text-white/80 hover:bg-purple-500 hover:text-white transition-all duration-300 self-start group/btn">
-                  <span className="text-[12px] font-bold uppercase tracking-[2px]">
+                  <Link to='/blog' className="text-[12px] font-bold uppercase tracking-[2px]">
                     Learn more
-                  </span>
+                  </Link>
                   <ArrowRight
                     size={14}
                     className="transition-transform group-hover/btn:translate-x-1"

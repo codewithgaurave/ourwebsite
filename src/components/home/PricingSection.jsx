@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 
 const plans = [
   {
@@ -54,6 +55,9 @@ const plans = [
   },
 ];
 
+
+
+
 const PricingSection = () => {
   return (
     <section
@@ -102,17 +106,16 @@ const PricingSection = () => {
 
               {/* Main Card */}
               <div
-                className={`relative px-5 sm:px-6 md:px-8 py-8 md:py-12 rounded-2xl md:rounded-[32px] border transition-all duration-500 flex flex-col h-full hover:translate-y-[-10px] cursor-pointer ${
-                  plan.isPopular
+                className={`relative px-5 sm:px-6 md:px-8 py-8 md:py-12 rounded-2xl md:rounded-[32px] border transition-all duration-500 flex flex-col h-full hover:translate-y-[-10px] cursor-pointer ${plan.isPopular
                     ? "border-white/20 shadow-[0_0_60px_rgba(74,98,132,0.2)] min-h-[600px] md:min-h-[780px]"
                     : "bg-white/[0.03] border-white/5 hover:border-white/10 min-h-[550px] md:min-h-[700px]"
-                }`}
+                  }`}
                 style={
                   plan.isPopular
                     ? {
-                        background:
-                          "linear-gradient(to bottom right, #1B2737, #404F62, #373250, #4A6284)",
-                      }
+                      background:
+                        "linear-gradient(to bottom right, #1B2737, #404F62, #373250, #4A6284)",
+                    }
                     : {}
                 }
               >
@@ -164,12 +167,12 @@ const PricingSection = () => {
                 </ul>
 
                 {/* Action Button */}
-                <button
-                  className={`w-full py-4 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 group/btn cursor-pointer ${
-                    plan.isPopular
+                <Link
+                  to="/pricing"
+                  className={`w-full py-4 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 group/btn cursor-pointer ${plan.isPopular
                       ? "bg-[#6B3054] hover:bg-[#823b66] border border-white/10"
                       : "bg-white/[0.05] hover:bg-white/[0.1] border border-white/5"
-                  }`}
+                    }`}
                 >
                   <span className="text-sm font-bold text-white uppercase tracking-widest">
                     Learn More
@@ -178,7 +181,7 @@ const PricingSection = () => {
                     size={18}
                     className="text-white group-hover/btn:translate-x-1 transition-transform"
                   />
-                </button>
+                </Link>
 
                 {/* Disclaimer Footer */}
                 <p className="mt-10 text-[12px] text-white/30 italic leading-relaxed">

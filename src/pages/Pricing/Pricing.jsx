@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { motion } from "framer-motion";
@@ -244,11 +245,9 @@ const Pricing = () => {
                     <p className="text-sm text-gray-500 leading-relaxed mb-8 italic">
                       {plan.description}
                     </p>
-                    <button
-                      className={`w-full py-4 rounded-xl font-bold transition-all transform active:scale-95 ${plan.popular ? "bg-linear-to-r from-purple-600 to-blue-600 text-white shadow-lg" : "bg-white/5 text-white border border-white/10 hover:bg-white/10"}`}
-                    >
+                    <Link to="/contact" className={`w-full py-4 rounded-xl font-bold transition-all transform active:scale-95 block text-center ${plan.popular ? "bg-linear-to-r from-purple-600 to-blue-600 text-white shadow-lg" : "bg-white/5 text-white border border-white/10 hover:bg-white/10"}`}>
                       Select Plan
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -351,12 +350,12 @@ const Pricing = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <button className="w-full sm:w-auto px-12 py-5 bg-white text-black font-bold text-lg rounded-full hover:bg-purple-600 hover:text-white transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                <Link to="/contact" className="w-full sm:w-auto px-12 py-5 bg-white text-black font-bold text-lg rounded-full hover:bg-purple-600 hover:text-white transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                   Get Started Now <ArrowRight size={20} />
-                </button>
-                <button className="w-full sm:w-auto px-12 py-5 bg-white/5 border border-white/20 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-all transform hover:scale-105 active:scale-95">
+                </Link>
+                <Link to="/contact" className="w-full sm:w-auto px-12 py-5 bg-white/5 border border-white/20 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-all transform hover:scale-105 active:scale-95">
                   Contact Our Team
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>

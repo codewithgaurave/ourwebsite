@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, BarChart3, Users, Edit3, Smartphone, Monitor, AppWindow, Code2, Gamepad2, Laptop, Cloud, Database, Palette, ShoppingCart, Blocks, Settings } from "lucide-react";
 import { motion } from "framer-motion";
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Play, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const clientReviews = [
   {
@@ -37,6 +38,8 @@ const clientReviews = [
 
 const Hero = () => {
   const [currentReview, setCurrentReview] = useState(0);
+
+  const navigate=useNavigate()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -169,10 +172,10 @@ const Hero = () => {
 
         {/* Buttons Mobile */}
         <div className="flex flex-col gap-3 w-full max-w-[280px]">
-          <button className="flex items-center justify-center gap-2 border border-white/10 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-white/[0.02]">
+          <button onClick={()=>navigate('/about-us')} className="flex cursor-pointer items-center justify-center gap-2 border border-white/10 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-white/[0.02] hover:bg-white/[0.05] transition-all">
             Get Started <ArrowRight size={14} />
           </button>
-          <button className="flex items-center justify-center gap-2 border border-white/10 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-white/[0.02]">
+          <button onClick={()=>navigate('/contact')} className="flex cursor-pointer items-center justify-center gap-2 border border-white/10 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-white/[0.02] hover:bg-white/[0.05] transition-all">
             Contact Us <Play size={14} />
           </button>
         </div>
@@ -293,10 +296,10 @@ const Hero = () => {
                 From mobile apps and responsive websites to web applications, desktop software, game development, API integrations, cloud solutions, blockchain, DevOps automation, UI/UX design, and ecommerce platforms — we build it all.
               </p>
               <div className="flex gap-8">
-                <button className="flex items-center gap-3 border-2 border-white/10 px-10 py-[18px] rounded-full text-sm font-bold uppercase tracking-[2px] text-white bg-white/[0.02] hover:bg-white/[0.05] transition-all group">
+                <button onClick={()=>navigate('/about-us')}  className="flex cursor-pointer items-center gap-3 border-2 border-white/10 px-10 py-[18px] rounded-full text-sm font-bold uppercase tracking-[2px] text-white bg-white/[0.02] hover:bg-white/[0.05] transition-all group">
                   Get Started <span className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10"><ArrowRight size={16} /></span>
                 </button>
-                <button className="flex items-center gap-3 border-2 border-white/10 px-10 py-[18px] rounded-full text-sm font-bold uppercase tracking-[2px] text-white bg-white/[0.02] hover:bg-white/[0.05] transition-all group">
+                <button onClick={()=>navigate('/contact')}  className="flex cursor-pointer items-center gap-3 border-2 border-white/10 px-10 py-[18px] rounded-full text-sm font-bold uppercase tracking-[2px] text-white bg-white/[0.02] hover:bg-white/[0.05] transition-all group">
                   Contact Us <span className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10"><Play size={16} /></span>
                 </button>
               </div>

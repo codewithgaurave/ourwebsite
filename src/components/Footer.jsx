@@ -165,11 +165,11 @@ const Footer = () => {
                 <br />
                 London W8 7NX United Kingdom
               </div>
-              <button className="flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-full border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] cursor-pointer text-white text-xs md:text-sm font-bold uppercase transition-all">
+              <Link to="/contact" className="flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-full border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] cursor-pointer text-white text-xs md:text-sm font-bold uppercase transition-all">
                 <Phone size={14} className="text-purple-400 md:hidden" />
                 <Phone size={16} className="text-purple-400 hidden md:block" />
                 Call Us
-              </button>
+              </Link>
             </div>
           </div>
 

@@ -1,0 +1,139 @@
+import React from "react";
+import { Rocket, MousePointer2, Search, Video, Smartphone, Monitor, AppWindow, Code2, Gamepad2, Laptop, Cloud, Database, Palette, ShoppingCart, Blocks, Settings } from "lucide-react";
+import { motion } from "framer-motion";
+
+const services = [
+  {
+    icon: <Smartphone className="w-12 h-12 text-cyan-400" />,
+    title: "MOBILE APP DEVELOPMENT",
+    desc: "Build high-performance iOS and Android applications with native and cross-platform technologies for seamless user experiences.",
+    active: true,
+  },
+  {
+    icon: <Monitor className="w-12 h-12 text-blue-400" />,
+    title: "WEB DEVELOPMENT",
+    desc: "Create stunning, responsive websites with modern frontend and backend technologies optimized for speed and SEO.",
+    active: false,
+  },
+  {
+    icon: <AppWindow className="w-12 h-12 text-indigo-400" />,
+    title: "WEB APP DEVELOPMENT",
+    desc: "Develop powerful web applications with real-time features, offline capabilities, and cloud integration solutions.",
+    active: false,
+  },
+  {
+    icon: <Code2 className="w-12 h-12 text-purple-400" />,
+    title: "SOFTWARE DEVELOPMENT",
+    desc: "Custom enterprise software solutions including ERP, CRM, and business automation tools that streamline operations.",
+    active: false,
+  },
+  {
+    icon: <Gamepad2 className="w-12 h-12 text-pink-400" />,
+    title: "GAME DEVELOPMENT",
+    desc: "Create engaging 2D and 3D games for mobile, desktop, and web platforms using Unity, Unreal Engine, and custom frameworks.",
+    active: false,
+  },
+  {
+    icon: <Laptop className="w-12 h-12 text-green-400" />,
+    title: "DESKTOP APP DEVELOPMENT",
+    desc: "Build powerful desktop applications for Windows, macOS, and Linux with native performance and modern UI frameworks.",
+    active: false,
+  },
+  {
+    icon: <Database className="w-12 h-12 text-orange-400" />,
+    title: "API DEVELOPMENT",
+    desc: "Design and develop RESTful and GraphQL APIs with robust authentication, documentation, and scalable architecture.",
+    active: false,
+  },
+  {
+    icon: <Cloud className="w-12 h-12 text-sky-400" />,
+    title: "CLOUD DEVELOPMENT",
+    desc: "Deploy and manage cloud-native applications on AWS, Azure, and GCP with auto-scaling and high availability.",
+    active: false,
+  },
+];
+
+const FeaturedServices = () => {
+  return (
+    <section
+      className="py-28 px-4 md:px-6 text-white my-12"
+      style={{
+        background: "linear-gradient(to right, #0A0C1F, #0A0C1F, #0A0C1F)",
+      }}
+    >
+      {/* Top Section: Header & Description */}
+      <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-14 ">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-3 mt-0 shrink-0 ml-4"
+        >
+          <div className="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_12px_#a855f7]"></div>
+          <span className="text-sm font-bold tracking-[4px] uppercase text-white/50">
+            Featured Services
+          </span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col items-end w-full mr-4"
+        >
+          <h2 className="text-[50px] sm:text-[70px] md:text-4xl font-[300] font-unbounded text-left uppercase tracking-[5px] leading-[0.85] mb-12 select-none">
+            BOOST YOUR WEBSITE TRAFFIC!
+          </h2>
+          <p className="text-white text-[14px] md:text-[15px] text-left max-w-2xl leading-[1.8] font-medium">
+            We help businesses grow online through smart SEO strategies,
+            targeted marketing, and performance-driven digital solutions that
+            increase visibility, traffic, and conversions effectively.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Services Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 ">
+        {services.map((service, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            className={`relative group p-6 rounded-2xl border transition-all duration-400 overflow-hidden min-h-[280px] flex flex-col justify-between cursor-pointer hover:-translate-y-3 ${
+              service.active
+                ? "bg-gradient-to-br from-[#1c1d3a] to-[#0A0C1F] border-white/20 shadow-2xl"
+                : "bg-white/[0.03] border-white/5 hover:bg-white/[0.08] hover:border-white/20"
+            }`}
+          >
+            {/* Active Glow/Gradient Effect */}
+            {service.active && (
+              <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-transparent to-transparent opacity-60"></div>
+            )}
+
+            <div className="relative z-10 transition-transform duration-500">
+              {service.icon}
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold font-syne uppercase tracking-tight mb-4 text-white group-hover:text-purple-300 transition-colors">
+                {service.title}
+              </h3>
+              <p className="text-white/40 text-[14px] font-medium leading-relaxed group-hover:text-white/70 transition-colors">
+                {service.desc}
+              </p>
+            </div>
+
+            {/* Corner Decorative Element */}
+            <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-white/5 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-all duration-700"></div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default React.memo(FeaturedServices);

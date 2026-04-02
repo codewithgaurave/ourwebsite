@@ -120,31 +120,71 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Rotating Badge */}
-          <div className="relative w-32 h-32 flex items-center justify-center -ml-4 rounded-full bg-[#302734]">
-            <div className="absolute inset-0 animate-spin-slow">
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                <path
-                  id="circlePath"
-                  d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
-                  fill="transparent"
-                />
-                <text className="fill-white/30 text-[8px] uppercase text-start font-unbounded tracking-[3px]">
-                  <textPath xlinkHref="#circlePath">
-                    Code * Create * Innovate * Scale *{" "}
+          {/* Rotating Programming Icons Circle */}
+          <div className="relative w-44 h-44 flex items-center justify-center mb-4">
+            <div className="absolute inset-0 rounded-full bg-[#302734]/50 border border-purple-500/10"></div>
+            <div className="absolute inset-0" style={{ animation: "rotateCircleReverse 15s linear infinite" }}>
+              <svg viewBox="0 0 200 200" className="w-full h-full">
+                <defs>
+                  <path id="iconCircle" d="M 100, 100 m -85, 0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0" fill="transparent" />
+                </defs>
+                <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" />
+                {[
+                  { name: "JS", color: "#F7DF1E", textColor: "#000", angle: 0 },
+                  { name: "TS", color: "#3178C6", textColor: "#fff", angle: 30 },
+                  { name: "Py", color: "#3776AB", textColor: "#FFD43B", angle: 60 },
+                  { name: "Re", color: "#61DAFB", textColor: "#000", angle: 90 },
+                  { name: "No", color: "#339933", textColor: "#fff", angle: 120 },
+                  { name: "Ja", color: "#ED8B00", textColor: "#fff", angle: 150 },
+                  { name: "Go", color: "#00ADD8", textColor: "#fff", angle: 180 },
+                  { name: "Rs", color: "#DEA584", textColor: "#fff", angle: 210 },
+                  { name: "C+", color: "#00599C", textColor: "#fff", angle: 240 },
+                  { name: "PH", color: "#777BB4", textColor: "#fff", angle: 270 },
+                  { name: "Sw", color: "#FA7343", textColor: "#fff", angle: 300 },
+                  { name: "Kt", color: "#7F52FF", textColor: "#fff", angle: 330 },
+                ].map((icon, i) => {
+                  const r = 85;
+                  const cx = 100 + r * Math.cos((icon.angle - 90) * (Math.PI / 180));
+                  const cy = 100 + r * Math.sin((icon.angle - 90) * (Math.PI / 180));
+                  return (
+                    <g key={i}>
+                      <circle cx={cx} cy={cy} r="12" fill={icon.color} opacity="0.9" />
+                      <text x={cx} y={cy} fontSize="7" fontWeight="bold" fill={icon.textColor} textAnchor="middle" dominantBaseline="central" fontFamily="sans-serif">
+                        {icon.name}
+                      </text>
+                    </g>
+                  );
+                })}
+              </svg>
+            </div>
+          </div>
+
+          {/* Rotating Text Circle Badge */}
+          <div className="relative w-36 h-36 flex items-center justify-center -ml-4">
+            <div className="absolute inset-0 rounded-full bg-[#302734]"></div>
+            <div className="absolute inset-0" style={{ animation: "rotateCircle 8s linear infinite" }}>
+              <svg viewBox="0 0 200 200" className="w-full h-full">
+                <defs>
+                  <path
+                    id="textCircle"
+                    d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+                    fill="transparent"
+                  />
+                </defs>
+                <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
+                <text fill="rgba(255,255,255,0.35)" fontSize="12" fontFamily="sans-serif" letterSpacing="3">
+                  <textPath href="#textCircle" startOffset="0%">
+                    CODE * CREATE * INNOVATE * SCALE * DEVELOP * BUILD *
                   </textPath>
                 </text>
               </svg>
             </div>
-            <div className="relative z-10">
-              <div className="w-2.5 h-2.5 bg-purple-600 rounded-full shadow-[0_0_15px_#a855f7]"></div>
-            </div>
+            <div className="w-3 h-3 bg-purple-500 rounded-full z-10 shadow-[0_0_15px_rgba(168,85,247,0.7)]"></div>
           </div>
         </motion.div>
 
         {/* Right Section (Titles and Description) */}
         <div className="lg:col-span-8 flex flex-col items-center lg:items-start justify-center w-full">
-          {/* Headings Block */}
           <div className="w-full flex flex-col items-center lg:items-start mb-10 lg:mb-16 relative font-unbounded text-white uppercase select-none space-y-2 lg:space-y-0">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -162,8 +202,7 @@ const Hero = () => {
                     transition={{ duration: 1, delay: 0.6, ease: "circOut" }}
                     className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[75%] -z-10 rounded-2xl md:rounded-[32px] backdrop-blur-[35px] border border-white/10 origin-left"
                     style={{
-                      background:
-                        "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
+                      background: "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
                     }}
                   ></motion.div>
                   CREA
@@ -189,8 +228,7 @@ const Hero = () => {
                     transition={{ duration: 1, delay: 0.8, ease: "circOut" }}
                     className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[85%] -z-10 rounded-2xl md:rounded-[32px] backdrop-blur-[35px] border border-white/10 origin-right"
                     style={{
-                      background:
-                        "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
+                      background: "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
                     }}
                   ></motion.div>
                   RE
@@ -199,7 +237,6 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Description & Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -225,26 +262,31 @@ const Hero = () => {
               <button className="flex items-center gap-3 border-2 border-white/10 px-8 lg:px-10 py-4 lg:py-[18px] rounded-full text-[13px] lg:text-sm font-bold uppercase tracking-[2px] text-white cursor-pointer bg-white/[0.02] hover:bg-white/[0.05] transition-all group w-full sm:w-auto justify-center">
                 Get Started
                 <span className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10">
-                  <ArrowRight
-                    size={16}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </button>
 
               <button className="flex items-center gap-3 border-2 border-white/10 px-8 lg:px-10 py-4 lg:py-[18px] rounded-full text-[13px] lg:text-sm font-bold uppercase tracking-[2px] text-white cursor-pointer bg-white/[0.02] hover:bg-white/[0.05] transition-all group w-full sm:w-auto justify-center">
                 Contact Us
                 <span className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10">
-                  <Play
-                    size={16}
-                    className="group-hover:scale-110 transition-transform"
-                  />
+                  <Play size={16} className="group-hover:scale-110 transition-transform" />
                 </span>
               </button>
             </div>
           </motion.div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes rotateCircle {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes rotateCircleReverse {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+      `}</style>
     </div>
   );
 };

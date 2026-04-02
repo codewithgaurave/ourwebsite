@@ -155,37 +155,33 @@ const AboutSection = () => {
 
             {/* Title */}
             <h2 className="text-2xl w-[95%] font-[300] md:text-[55px] lg:text-4xl font-unbounded text-white uppercase leading-[1.5] mb-12 tracking-[4px]">
-              FUELING YOUR GROWTH WITH{" "}
-              <span className="text-white/90">SEARCH POWER.</span>
+              FUELING YOUR GROWTH WITH
+            </h2>
+            <h2 className="text-2xl w-[95%] font-[300] md:text-[55px] lg:text-4xl font-unbounded text-white/90 uppercase leading-[1.5] mb-12 tracking-[4px]">
+              SEARCH POWER.
             </h2>
 
-            {/* Features + Right Box Layout */}
-            <div className="flex flex-col md:flex-row gap-10 mb-16">
-              {/* Feature Items List */}
-              <div className="flex-1 space-y-12">
-                {features.map((feature, idx) => (
-                  <div key={idx} className="flex gap-6 group">
-                    <div
-                      className={`shrink-0 w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500 ${
-                        idx === 0 ? "bg-[#4B2A40]" : "bg-[#324054]"
-                      }`}
-                    >
-                      {feature.icon}
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <h3 className="text-[22px] md:text-[26px] font-[300] font-unbounded text-white uppercase tracking-tight mb-2 leading-tight">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-400 text-[15px] leading-relaxed font-medium max-w-[340px]">
-                        {feature.desc}
-                      </p>
-                    </div>
+            {/* Features Grid - 2 Left, 2 Right */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {features.map((feature, idx) => (
+                <div key={idx} className="flex gap-5 group">
+                  <div
+                    className={`shrink-0 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 ${
+                      idx === 0 ? "bg-[#4B2A40]" : idx === 1 ? "bg-[#324054]" : idx === 2 ? "bg-[#403B52]" : "bg-[#2A3B4A]"
+                    }`}
+                  >
+                    {feature.icon}
                   </div>
-                ))}
-              </div>
-
-              {/* The Large Vertical Box from Reference */}
-              <div className="w-full md:w-[320px] h-[380px] bg-white/[0.05] border border-white/10 rounded-2xl backdrop-blur-sm self-center"></div>
+                  <div className="flex flex-col justify-center">
+                    <h3 className="text-[20px] md:text-[22px] font-[300] font-unbounded text-white uppercase tracking-tight mb-2 leading-tight">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-400 text-[14px] leading-relaxed font-medium">
+                      {feature.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Stats Grid */}

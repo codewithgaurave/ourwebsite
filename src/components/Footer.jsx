@@ -130,31 +130,30 @@ const Footer = () => {
                 Services
                 <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-purple-500"></span>
               </h4>
-              <ul className="space-y-4">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                 {[
-                  { name: "Mobile App Development", path: "/services/mobile-app-development" },
+                  { name: "Mobile App Dev", path: "/services/mobile-app-development" },
                   { name: "Web Development", path: "/services/web-development" },
-                  { name: "Web App Development", path: "/services/web-app-development" },
-                  { name: "Software Development", path: "/services/software-development" },
-                  { name: "Game Development", path: "/services/game-development" },
-                  { name: "Desktop App Development", path: "/services/desktop-app-development" },
+                  { name: "Web App Dev", path: "/services/web-app-development" },
+                  { name: "Software Dev", path: "/services/software-development" },
+                  { name: "Game Dev", path: "/services/game-development" },
+                  { name: "Desktop App Dev", path: "/services/desktop-app-development" },
                   { name: "API Development", path: "/services/api-development" },
                   { name: "Cloud Development", path: "/services/cloud-development" },
-                  { name: "Blockchain Development", path: "/services/blockchain-development" },
+                  { name: "Blockchain Dev", path: "/services/blockchain-development" },
                   { name: "DevOps Services", path: "/services/devops-services" },
                   { name: "UI/UX Design", path: "/services/ui-ux-design" },
-                  { name: "Ecommerce Development", path: "/services/ecommerce-development" },
+                  { name: "Ecommerce Dev", path: "/services/ecommerce-development" },
                 ].map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      to={item.path}
-                      className="text-white/40 hover:text-white text-[15px] transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="text-white/40 hover:text-white text-[13px] transition-colors whitespace-nowrap"
+                  >
+                    {item.name}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
             <div>
               <h4 className="text-white text-sm font-bold uppercase tracking-[2px] mb-8 relative inline-block">

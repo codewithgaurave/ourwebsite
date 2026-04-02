@@ -1,8 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Play, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+const clientReviews = [
+  {
+    name: "EZRA MICHAEL",
+    role: "Our Client",
+    text: "Optivexa transformed our business with a stunning mobile app and website. Their team delivered beyond expectations with incredible speed and quality.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop",
+  },
+  {
+    name: "PRIYA VERMA",
+    role: "Our Client",
+    text: "Their mobile app development team built an incredible cross-platform app. The UI/UX design was outstanding and user engagement skyrocketed.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop",
+  },
+  {
+    name: "RAHUL MEHTA",
+    role: "Our Client",
+    text: "Exceptional web development services. They transformed our outdated website into a modern, responsive platform that loads incredibly fast.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop",
+  },
+  {
+    name: "SNEHA REDDY",
+    role: "Our Client",
+    text: "Their cloud and DevOps expertise helped us scale our infrastructure seamlessly. Deployment times reduced by 80% and uptime improved dramatically.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&h=200&auto=format&fit=crop",
+  },
+  {
+    name: "VIKRAM JOSHI",
+    role: "Our Client",
+    text: "Amazing API development and blockchain integration. They delivered a secure, scalable solution that exceeded our expectations in every way.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&h=200&auto=format&fit=crop",
+  },
+];
 
 const Hero = () => {
+  const [currentReview, setCurrentReview] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % clientReviews.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const review = clientReviews[currentReview];
+
   return (
     <div className="relative w-full px-6 sm:px-10 md:px-16 pt-32 pb-16 md:pt-40 md:pb-32 flex flex-col justify-center min-h-[85vh] md:min-h-screen overflow-hidden">
       {/* Background Gradient Layer */}
@@ -19,7 +63,7 @@ const Hero = () => {
       ></div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 w-full max-w-[1536px] mx-auto h-full gap-8 z-10 items-center">
-        {/* Left Section (Client info + Rotating Badge) - Visible on lg */}
+        {/* Left Section (Client info + Rotating Badge) */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -27,28 +71,56 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="hidden lg:flex lg:col-span-4 flex-col justify-between h-full min-h-[500px] py-12"
         >
-          <div className="py-2">
-            <div className="flex items-center gap-4 mb-6">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop"
-                alt="Ezra Michael"
-                loading="lazy"
-                className="w-16 h-16 rounded-full border-2 border-white/10 object-cover shadow-lg"
-              />
-              <div className="flex flex-col">
-                <h3 className="font-unbounded uppercase tracking-tight text-white leading-none">
-                  EZRA MICHAEL
-                </h3>
-                <p className="text-sm text-gray-400 font-medium mt-1">
-                  Our Client
+          {/* Client Slider */}
+          <div className="py-2 overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentReview}
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -50, opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="flex flex-col"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <img
+                    src={review.image}
+                    alt={review.name}
+                    loading="lazy"
+                    className="w-16 h-16 rounded-full border-2 border-white/10 object-cover shadow-lg"
+                  />
+                  <div className="flex flex-col">
+                    <h3 className="font-unbounded uppercase tracking-tight text-white leading-none">
+                      {review.name}
+                    </h3>
+                    <p className="text-sm text-gray-400 font-medium mt-1">
+                      {review.role}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-gray-200 text-xs font-medium italic max-w-[280px] leading-snug">
+                  "{review.text}"
                 </p>
-              </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Dots */}
+            <div className="flex gap-2 mt-6">
+              {clientReviews.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentReview(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    i === currentReview
+                      ? "bg-purple-500 w-6 shadow-[0_0_8px_rgba(168,85,247,0.5)]"
+                      : "bg-white/20 hover:bg-white/40"
+                  }`}
+                />
+              ))}
             </div>
-            <p className="text-gray-200 text-xs font-medium italic max-w-[280px] leading-snug">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit".
-            </p>
           </div>
 
+          {/* Rotating Badge */}
           <div className="relative w-32 h-32 flex items-center justify-center -ml-4 rounded-full bg-[#302734]">
             <div className="absolute inset-0 animate-spin-slow">
               <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -59,7 +131,7 @@ const Hero = () => {
                 />
                 <text className="fill-white/30 text-[8px] uppercase text-start font-unbounded tracking-[3px]">
                   <textPath xlinkHref="#circlePath">
-                    Optimizing * Grow Faster * Digital *{" "}
+                    Code * Create * Innovate * Scale *{" "}
                   </textPath>
                 </text>
               </svg>
@@ -72,9 +144,8 @@ const Hero = () => {
 
         {/* Right Section (Titles and Description) */}
         <div className="lg:col-span-8 flex flex-col items-center lg:items-start justify-center w-full">
-          {/* Headings Block - Using flex to force single lines */}
+          {/* Headings Block */}
           <div className="w-full flex flex-col items-center lg:items-start mb-10 lg:mb-16 relative font-unbounded text-white uppercase select-none space-y-2 lg:space-y-0">
-            {/* OPTIMIZING */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -95,13 +166,12 @@ const Hero = () => {
                         "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
                     }}
                   ></motion.div>
-                  DIGI
+                  CREA
                 </span>
-                TAL
+                TE
               </h1>
             </motion.div>
 
-            {/* VISIBILITY */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +180,7 @@ const Hero = () => {
               className="flex items-center justify-center lg:justify-start w-full lg:-mt-6 2xl:-mt-10 lg:ml-12"
             >
               <h1 className="text-[34px] sm:text-[54px] md:text-[74px] lg:text-[100px] 2xl:text-[110px] font-bold whitespace-nowrap flex items-center tracking-tighter">
-                GRO
+                FUTU
                 <span className="relative inline-block px-2 sm:px-4 ml-1">
                   <motion.div
                     initial={{ scaleX: 0 }}
@@ -123,7 +193,7 @@ const Hero = () => {
                         "linear-gradient(133deg, #404D5F 0%, #2D2333 100%)",
                     }}
                   ></motion.div>
-                  WTH
+                  RE
                 </span>
               </h1>
             </motion.div>
@@ -139,16 +209,16 @@ const Hero = () => {
           >
             <p className="text-gray-300 text-[14px] sm:text-[16px] md:text-[18px] font-medium leading-relaxed mb-6 max-w-[600px]">
               <span className="text-white font-bold block mb-2 text-lg sm:text-xl">
-                Full-Stack Development & Digital Solutions
+                End-to-End Software Development & Digital Innovation
               </span>
               <span className="block mb-2 text-sm sm:text-base text-gray-400">
-                We build powerful mobile apps (iOS & Android), modern websites, progressive web applications,
-                and custom enterprise software solutions to help your business grow faster in the digital world.
+                From mobile apps (iOS & Android) and responsive websites to web applications, desktop software,
+                game development, API integrations, cloud solutions, blockchain, DevOps automation, UI/UX design,
+                and ecommerce platforms — we build it all.
               </span>
-              From native and cross-platform app development to high-performance websites, real-time web apps,
-              and enterprise software solutions — we deliver technology that drives real
-              business results. Our goal is simple — increase your visibility,
-              improve efficiency, and accelerate growth.
+              We deliver cutting-edge technology solutions that transform your ideas into reality.
+              Our expert team crafts scalable, secure, and high-performance software across every platform
+              to help your business innovate, grow, and lead in the digital era.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 lg:gap-8 justify-center lg:justify-start w-full sm:w-auto">

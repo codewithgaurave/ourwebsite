@@ -97,73 +97,32 @@ const Footer = () => {
           <div className="h-[1px] w-full bg-white/5 mb-16"></div>
 
           {/* Middle Section: Links Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
             <div>
               <h4 className="text-white text-sm font-bold uppercase tracking-[2px] mb-8 relative inline-block">
-                Navigation
+                Quick Links
                 <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-purple-500"></span>
               </h4>
               <ul className="space-y-4">
-                {["Home", "About Us", "Team", "Services", "Pricing Plan", "Contact Us"].map(
-                  (item) => (
-                    <li key={item}>
-                      <Link
-                        to={
-                          item === "About Us"
-                            ? "/about-us"
-                            : item === "Team"
-                              ? "/team"
-                              : item === "Services"
-                                ? "/services"
-                                : item === "Pricing Plan"
-                                  ? "/pricing"
-                                  : item === "Contact Us"
-                                    ? "/contact"
-                                    : item === "Home"
-                                      ? "/"
-                                      : "#"
-                        }
-                        className="text-white/40 hover:text-white text-[15px] transition-colors"
-                      >
-                        {item}
-                      </Link>
-                    </li>
-                  ),
-                )}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white text-sm font-bold uppercase tracking-[2px] mb-8 relative inline-block">
-                Quick Link
-                <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-purple-500"></span>
-              </h4>
-              <ul className="space-y-4">
-                {["Home", "About Us", "Team", "Services", "Blog", "Contact Us"].map(
-                  (item) => (
-                    <li key={item}>
-                      <Link
-                        to={
-                          item === "About Us"
-                            ? "/about-us"
-                            : item === "Team"
-                              ? "/team"
-                              : item === "Services"
-                                ? "/services"
-                                : item === "Blog"
-                                  ? "/blog"
-                                  : item === "Contact Us"
-                                    ? "/contact"
-                                    : item === "Home"
-                                      ? "/"
-                                      : "#"
-                        }
-                        className="text-white/40 hover:text-white text-[15px] transition-colors"
-                      >
-                        {item}
-                      </Link>
-                    </li>
-                  ),
-                )}
+                {[
+                  { name: "Home", path: "/" },
+                  { name: "About Us", path: "/about-us" },
+                  { name: "Team", path: "/team" },
+                  { name: "Services", path: "/services" },
+                  { name: "Pricing Plan", path: "/pricing" },
+                  { name: "Blog", path: "/blog" },
+                  { name: "FAQs", path: "/faqs" },
+                  { name: "Contact Us", path: "/contact" },
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.path}
+                      className="text-white/40 hover:text-white text-[15px] transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
@@ -172,21 +131,26 @@ const Footer = () => {
                 <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-purple-500"></span>
               </h4>
               <ul className="space-y-4">
-                {["App Development", "Web Development", "Web App Development", "Software Development", "Contact Us", "FAQs"].map((item) => (
-                  <li key={item}>
+                {[
+                  { name: "Mobile App Development", path: "/services/mobile-app-development" },
+                  { name: "Web Development", path: "/services/web-development" },
+                  { name: "Web App Development", path: "/services/web-app-development" },
+                  { name: "Software Development", path: "/services/software-development" },
+                  { name: "Game Development", path: "/services/game-development" },
+                  { name: "Desktop App Development", path: "/services/desktop-app-development" },
+                  { name: "API Development", path: "/services/api-development" },
+                  { name: "Cloud Development", path: "/services/cloud-development" },
+                  { name: "Blockchain Development", path: "/services/blockchain-development" },
+                  { name: "DevOps Services", path: "/services/devops-services" },
+                  { name: "UI/UX Design", path: "/services/ui-ux-design" },
+                  { name: "Ecommerce Development", path: "/services/ecommerce-development" },
+                ].map((item) => (
+                  <li key={item.name}>
                     <Link
-                      to={
-                        item === "Contact Us"
-                          ? "/contact"
-                          : item === "FAQs"
-                            ? "/faqs"
-                            : item === "Services"
-                              ? "/services"
-                              : "/services"
-                      }
+                      to={item.path}
                       className="text-white/40 hover:text-white text-[15px] transition-colors"
                     >
-                      {item}
+                      {item.name}
                     </Link>
                   </li>
                 ))}
@@ -214,7 +178,7 @@ const Footer = () => {
           {/* Bottom Section: Footer Bottom */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-white/40 text-sm">
-              SEO Digital Agency Template Kit by Kitpro
+              &copy; 2026 Optivexa. All Rights Reserved.
             </div>
             <div className="flex items-center gap-6">
               <div className="flex gap-4">

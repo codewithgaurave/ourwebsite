@@ -46,8 +46,13 @@ const Contact = () => {
 
   const contactDetails = [
     {
-      title: "Phone",
-      content: "+91 XXXXX XXXXX",
+      title: "Call & WhatsApp",
+      content: (
+        <div className="flex flex-col gap-1">
+          <a href="tel:+917610000127" className="hover:text-purple-400 transition-colors">+91 7610000127 (Call)</a>
+          <a href="https://wa.me/917610000127" target="_blank" rel="noopener noreferrer" className="hover:text-[#25D366] transition-colors">+91 7610000127 (WhatsApp)</a>
+        </div>
+      ),
       subContent: "Monday – Saturday : 10 AM – 7 PM",
       icon: <Phone size={24} className="text-purple-400" />,
       color: "from-purple-500/20 to-transparent",
@@ -160,19 +165,19 @@ const Contact = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 italic">
                     Our Office
                   </h3>
-                  <div className="flex items-start gap-4 text-gray-400">
-                    <MapPin
-                      className="text-purple-400 shrink-0 mt-1"
-                      size={20}
-                    />
-                    <div>
-                      <p className="text-white font-bold text-lg mb-2">
-                        Tech Business Hub
-                      </p>
-                      <p>Your City, India</p>
-                      <p>Pin Code – XXXXX</p>
+                    <div className="flex items-start gap-4 text-gray-400">
+                      <MapPin
+                        className="text-purple-400 shrink-0 mt-1"
+                        size={20}
+                      />
+                      <div>
+                        <p className="text-white font-bold text-lg mb-2">
+                          Hind Import Export International (OPC) Pvt. Ltd.
+                        </p>
+                        <p>Ground Floor, Jaipur, Rajasthan</p>
+                        <p>India – 302021</p>
+                      </div>
                     </div>
-                  </div>
                 </div>
                 <div className="absolute -bottom-10 -right-10 text-white/5 group-hover:text-white/10 transition-colors">
                   <MapPin size={200} strokeWidth={0.5} />
@@ -255,7 +260,7 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+91 XXXXX XXXXX"
+                        placeholder="+91 7610000127"
                         className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-6 text-white outline-none focus:border-purple-500/50 transition-colors"
                       />
                     </div>
@@ -380,6 +385,26 @@ const Contact = () => {
                 </Link>
               </div>
             </div>
+          </motion.div>
+        </section>
+        {/* ⭐ Google Map Section */}
+        <section className="w-full px-6 md:px-10 max-w-[1440px] mx-auto mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="w-full h-[450px] rounded-[3rem] overflow-hidden border border-white/10 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700 shadow-2xl"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113812.28585472856!2d75.71960133405763!3d26.88544795361093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1713000000000!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Office Location"
+            ></iframe>
           </motion.div>
         </section>
       </main>

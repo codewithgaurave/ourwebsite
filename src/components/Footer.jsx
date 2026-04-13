@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Twitter, Youtube, Phone, Send } from "lucide-react";
+import { Facebook, Twitter, Youtube, Phone, Send, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
@@ -161,15 +161,20 @@ const Footer = () => {
                 <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-purple-500"></span>
               </h4>
               <div className="text-white/40 text-[13px] md:text-[15px] leading-relaxed mb-6 md:mb-8">
-                123 High Street Kensington
+                Hind Import Export International (OPC) Pvt. Ltd.
                 <br />
-                London W8 7NX United Kingdom
+                Ground Floor, Jaipur, 302021, Rajasthan, India
               </div>
-              <Link to="/contact" className="flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-full border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] cursor-pointer text-white text-xs md:text-sm font-bold uppercase transition-all">
-                <Phone size={14} className="text-purple-400 md:hidden" />
-                <Phone size={16} className="text-purple-400 hidden md:block" />
-                Call Us
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="tel:+917610000127" className="flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] cursor-pointer text-white text-sm font-bold uppercase transition-all flex-1 min-w-[160px]">
+                  <Phone size={18} className="text-purple-400" />
+                  Call Us
+                </a>
+                <a href="https://wa.me/917610000127" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/[0.03] hover:bg-[#25D366]/20 cursor-pointer text-white text-sm font-bold uppercase transition-all flex-1 min-w-[160px] group">
+                  <MessageCircle size={18} className="text-[#25D366] group-hover:scale-110 transition-transform" />
+                  WhatsApp
+                </a>
+              </div>
             </div>
           </div>
 
@@ -182,14 +187,21 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-4 md:gap-6">
               <div className="flex gap-3 md:gap-4">
-                {[Facebook, Twitter, Youtube].map((Icon, i) => (
+                {[
+                  { Icon: Facebook, link: "#" },
+                  { Icon: Twitter, link: "#" },
+                  { Icon: Youtube, link: "#" },
+                  { Icon: MessageCircle, link: "https://wa.me/917610000127" },
+                ].map((item, i) => (
                   <a
                     key={i}
-                    href="#"
-                    className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-600 transition-all"
+                    href={item.link}
+                    target={item.link !== "#" ? "_blank" : undefined}
+                    rel={item.link !== "#" ? "noopener noreferrer" : undefined}
+                    className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-600 transition-all text-white"
                   >
-                    <Icon size={16} className="text-white md:hidden" />
-                    <Icon size={18} className="text-white hidden md:block" />
+                    <item.Icon size={16} className="md:hidden" />
+                    <item.Icon size={18} className="hidden md:block" />
                   </a>
                 ))}
               </div>

@@ -34,6 +34,7 @@ import {
   Globe2,
   Cctv,
 } from "lucide-react";
+import WhatsAppIcon from "../../components/icons/WhatsAppIcon";
 
 const Services = () => {
   // Scroll to top on mount
@@ -324,6 +325,16 @@ const Services = () => {
                     ))}
                   </div>
                 </div>
+
+                <a 
+                  href={`https://wa.me/917610000127?text=Hello!%20I%20want%20to%20enquire%20about%20${encodeURIComponent(service.title)}%20services.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 md:mt-10 inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-white/5 border border-white/10 hover:bg-[#25D366]/20 rounded-full text-white font-bold transition-all transform hover:scale-105 group/enquiry whitespace-nowrap"
+                >
+                  <WhatsAppIcon size={20} className="text-[#25D366] group-hover/enquiry:scale-110 transition-transform" />
+                  QUICK ENQUIRY
+                </a>
               </div>
               <div
                 className={`relative ${index % 2 !== 0 ? "lg:order-1" : ""}`}

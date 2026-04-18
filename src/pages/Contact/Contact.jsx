@@ -20,6 +20,7 @@ import {
   Star,
   X,
 } from "lucide-react";
+import WhatsAppIcon from "../../components/icons/WhatsAppIcon";
 
 const Contact = () => {
   // Scroll to top on mount
@@ -361,8 +362,10 @@ const Contact = () => {
                       <CheckCircle2 size={14} className="text-green-500" />
                       We usually respond within 24 hours.
                     </div>
-                    <p className="text-[12px] text-gray-500 ml-7 italic">
-                      For quick response, contact us on <a href="https://wa.me/917610000127" target="_blank" className="text-green-400 hover:underline">WhatsApp!</a>
+                    <p className="text-[12px] text-gray-500 ml-7 italic flex items-center gap-1">
+                      For quick response, contact us on <a href="https://wa.me/917610000127?text=Hello%21%20I%27m%20interested%20in%20your%20services.%20Can%20we%20discuss%3F" target="_blank" className="text-green-400 hover:underline flex items-center gap-1">
+                        <WhatsAppIcon size={14} /> WhatsApp!
+                      </a>
                     </p>
                   </div>
                 </form>

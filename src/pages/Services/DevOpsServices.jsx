@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { motion } from "framer-motion";
 import { Settings, CheckCircle2, Code2, Layers, Zap, Shield, Gauge, Server } from "lucide-react";
+import WhatsAppIcon from "../../components/icons/WhatsAppIcon";
 
 const DevOpsServices = () => {
   useEffect(() => {
@@ -151,27 +152,33 @@ const DevOpsServices = () => {
 
         {/* CTA Section */}
         <section className="px-6 md:px-10 max-w-[1440px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="relative rounded-[3.5rem] overflow-hidden bg-linear-to-br from-[#1a0b2e] to-[#0a0510] border border-emerald-500/20 p-12 md:p-24 text-center group"
-          >
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                Ready To Streamline Your{" "}
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-green-400">
-                  Development?
-                </span>
-              </h2>
-              <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                Let's discuss your DevOps needs and create a solution that drives results.
-              </p>
-              <button className="px-10 py-5 bg-linear-to-r from-emerald-600 to-green-600 rounded-full text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] transform hover:scale-105 transition-all outline-none">
-                Start Your Project
-              </button>
-            </div>
-          </motion.div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="relative rounded-[3.5rem] overflow-hidden bg-linear-to-br from-[#1a0b2e] to-[#0a0510] border border-emerald-500/20 p-8 md:p-24 text-center group"
+    >
+      <div className="relative z-10">
+        <h2 className="text-3xl md:text-6xl font-bold text-white mb-8 leading-tight">
+          Ready To Streamline Your{" "}
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-green-400">
+            Development?
+          </span>
+        </h2>
+        <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+          Let's discuss your DevOps needs and create a solution that drives results.
+        </p>
+        <a 
+          href="https://wa.me/917610000127?text=Hello!%20I%20want%20to%20enquire%20about%20DevOps%20Services%20services."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 px-6 py-4 md:px-10 md:py-5 bg-linear-to-r from-emerald-600 to-green-600 rounded-full text-white font-bold text-base md:text-lg hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] transform hover:scale-105 transition-all outline-none group whitespace-nowrap"
+        >
+          <WhatsAppIcon size={24} className="group-hover:scale-110 transition-transform" />
+          ENQUIRE NOW
+        </a>
+      </div>
+    </motion.div>
         </section>
       </main>
 

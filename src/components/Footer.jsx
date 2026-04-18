@@ -1,5 +1,6 @@
 import React from "react";
-import { Facebook, Twitter, Youtube, Phone, Send, MessageCircle } from "lucide-react";
+import { Facebook, Twitter, Youtube, Phone, Send } from "lucide-react";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
@@ -168,8 +169,8 @@ const Footer = () => {
                   <Phone size={18} className="text-purple-400" />
                   Call Us
                 </a>
-                <a href="https://wa.me/917610000127" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/[0.03] hover:bg-[#25D366]/20 cursor-pointer text-white text-sm font-bold uppercase transition-all flex-1 min-w-[160px] group">
-                  <MessageCircle size={18} className="text-[#25D366] group-hover:scale-110 transition-transform" />
+                <a href="https://wa.me/917610000127?text=Hello%21%20I%27m%20interested%20in%20your%20services.%20Can%20we%20discuss%3F" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/[0.03] hover:bg-[#25D366]/20 cursor-pointer text-white text-sm font-bold uppercase transition-all flex-1 min-w-[160px] group">
+                  <WhatsAppIcon size={22} className="text-[#25D366] group-hover:scale-110 transition-transform" />
                   WhatsApp
                 </a>
               </div>
@@ -189,7 +190,7 @@ const Footer = () => {
                   { Icon: Facebook, link: "#" },
                   { Icon: Twitter, link: "#" },
                   { Icon: Youtube, link: "#" },
-                  { Icon: MessageCircle, link: "https://wa.me/917610000127" },
+                  { Icon: WhatsAppIcon, link: "https://wa.me/917610000127?text=Hello%21%20I%27m%20interested%20in%20your%20services.%20Can%20we%20discuss%3F" },
                 ].map((item, i) => (
                   <a
                     key={i}

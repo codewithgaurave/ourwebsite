@@ -1,5 +1,6 @@
 import React from "react";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 import { motion } from "framer-motion";
 
 const FloatingActions = () => {
@@ -12,16 +13,16 @@ const FloatingActions = () => {
       shadow: "shadow-purple-500/40",
     },
     {
-      icon: <MessageCircle size={24} />,
+      icon: <WhatsAppIcon size={24} />,
       label: "WhatsApp",
-      href: "https://wa.me/917610000127",
+      href: "https://wa.me/917610000127?text=Hello%21%20I%27m%20interested%20in%20your%20services.%20Can%20we%20discuss%3F",
       color: "bg-[#25D366]",
       shadow: "shadow-green-500/40",
     },
   ];
 
   return (
-    <div className="fixed bottom-8 left-6 md:bottom-10 md:left-10 z-[200] flex flex-col gap-4">
+    <div className="fixed bottom-8 left-0 md:bottom-10 md:left-10 z-[200] flex flex-col gap-4">
       {actions.map((action, index) => (
         <motion.a
           key={index}

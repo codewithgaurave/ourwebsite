@@ -14,6 +14,7 @@ const menuItems = [
 const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,14 +25,19 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setActiveMobileDropdown(null);
+    }
+  }, [isMenuOpen]);
+
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled
             ? "bg-[#0b0612]/80 backdrop-blur-xl border-b border-white/10 py-4 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)]"
             : "bg-transparent py-7"
-        }`}
+          }`}
       >
         <div className="max-w-[1440px] mx-auto flex items-center justify-between px-6 md:px-10 text-white w-full relative">
           {/* Logo Section */}
@@ -254,9 +260,20 @@ const Navbar = () => {
               {menuItems.map((item, idx) => (
                 <div key={idx} className="flex flex-col gap-4">
                   {item.dropdown ? (
-                    <div className="flex items-center justify-between text-2xl font-bold text-white uppercase tracking-tight">
+                    <div
+                      onClick={() =>
+                        setActiveMobileDropdown(
+                          activeMobileDropdown === idx ? null : idx
+                        )
+                      }
+                      className="flex items-center justify-between text-2xl font-bold text-white uppercase tracking-tight cursor-pointer"
+                    >
                       {item.name}
-                      <ChevronDown size={20} className="opacity-50" />
+                      <ChevronDown
+                        size={20}
+                        className={`opacity-50 transition-all duration-300 ${activeMobileDropdown === idx ? "rotate-180" : ""
+                          }`}
+                      />
                     </div>
                   ) : (
                     <NavLink
@@ -273,56 +290,65 @@ const Navbar = () => {
                       {item.name}
                     </NavLink>
                   )}
-                  {item.dropdown && (
-                    <div className="flex flex-col gap-4 pl-4 border-l border-white/10">
-                      {item.dropdown.map((sub, i) => (
-                        <NavLink
-                          key={i}
-                          to={
-                            sub === "About Us"
-                              ? "/about-us"
-                              : sub === "Team"
-                                ? "/team"
-                                : sub === "Mobile App Development"
-                                  ? "/services/mobile-app-development"
-                                  : sub === "Web Development"
-                                    ? "/services/web-development"
-                                    : sub === "Web App Development"
-                                      ? "/services/web-app-development"
-                                      : sub === "Software Development"
-                                        ? "/services/software-development"
-                                        : sub === "Game Development"
-                                          ? "/services/game-development"
-                                          : sub === "Desktop App Development"
-                                            ? "/services/desktop-app-development"
-                                            : sub === "API Development"
-                                              ? "/services/api-development"
-                                              : sub === "Cloud Development"
-                                                ? "/services/cloud-development"
-                                                : sub === "Blockchain Development"
-                                                  ? "/services/blockchain-development"
-                                                  : sub === "DevOps Services"
-                                                    ? "/services/devops-services"
-                                                    : sub === "UI/UX Design"
-                                                      ? "/services/ui-ux-design"
-                                                      : sub === "E-commerce Development"
-                                                        ? "/services/ecommerce-development"
-                                                        : sub === "Pricing Plan"
-                                                          ? "/pricing"
-                                                          : sub === "FAQs"
-                                                            ? "/faqs"
-                                                            : sub === "Blog"
-                                                              ? "/blog"
-                                                              : "#"
-                          }
-                          onClick={() => setIsMenuOpen(false)}
-                          className="text-lg text-white/50 hover:text-purple-400 transition-colors"
-                        >
-                          {sub}
-                        </NavLink>
-                      ))}
-                    </div>
-                  )}
+
+                  <AnimatePresence>
+                    {item.dropdown && activeMobileDropdown === idx && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex flex-col gap-4 pl-4 border-l border-white/10 overflow-hidden"
+                      >
+                        {item.dropdown.map((sub, i) => (
+                          <NavLink
+                            key={i}
+                            to={
+                              sub === "About Us"
+                                ? "/about-us"
+                                : sub === "Team"
+                                  ? "/team"
+                                  : sub === "Mobile App Development"
+                                    ? "/services/mobile-app-development"
+                                    : sub === "Web Development"
+                                      ? "/services/web-development"
+                                      : sub === "Web App Development"
+                                        ? "/services/web-app-development"
+                                        : sub === "Software Development"
+                                          ? "/services/software-development"
+                                          : sub === "Game Development"
+                                            ? "/services/game-development"
+                                            : sub === "Desktop App Development"
+                                              ? "/services/desktop-app-development"
+                                              : sub === "API Development"
+                                                ? "/services/api-development"
+                                                : sub === "Cloud Development"
+                                                  ? "/services/cloud-development"
+                                                  : sub === "Blockchain Development"
+                                                    ? "/services/blockchain-development"
+                                                    : sub === "DevOps Services"
+                                                      ? "/services/devops-services"
+                                                      : sub === "UI/UX Design"
+                                                        ? "/services/ui-ux-design"
+                                                        : sub === "E-commerce Development"
+                                                          ? "/services/ecommerce-development"
+                                                          : sub === "Pricing Plan"
+                                                            ? "/pricing"
+                                                            : sub === "FAQs"
+                                                              ? "/faqs"
+                                                              : sub === "Blog"
+                                                                ? "/blog"
+                                                                : "#"
+                            }
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-lg text-white/50 hover:text-purple-400 transition-colors"
+                          >
+                            {sub}
+                          </NavLink>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               ))}
 

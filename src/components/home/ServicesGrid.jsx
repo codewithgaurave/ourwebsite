@@ -106,7 +106,7 @@ const services = [
 
 const ServicesGrid = () => {
   return (
-    <section className="py-12 sm:py-16 md:py-24" style={{ background: "#0A0C1F" }}>
+    <section className="py-12 sm:py-16 md:py-24 overflow-hidden" style={{ background: "#0A0C1F" }}>
       <div className="max-w-[1440px] mx-auto px-4 md:px-10">
         {/* Header Box */}
         <motion.div
@@ -155,7 +155,7 @@ const ServicesGrid = () => {
                 {/* 1st Layer (Backmost) - Tilted Left */}
                 <div
                   className="absolute inset-0 bg-white/[0.04] border border-white/10 rounded-2xl -z-20 transition-all duration-700"
-                  style={{ transform: "rotate(-6deg) scale(1.02)" }}
+                  style={{ transform: "rotate(-3deg) scale(0.98)" }}
                 ></div>
 
                 {/* Main Card Container */}

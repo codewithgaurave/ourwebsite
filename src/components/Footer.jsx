@@ -97,7 +97,7 @@ const Footer = () => {
           <div className="h-[1px] w-full bg-white/5 mb-16"></div>
 
           {/* Middle Section: Links Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-12 md:mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
             <div>
               <h4 className="text-white text-xs sm:text-sm font-bold uppercase tracking-[2px] mb-6 md:mb-8 relative inline-block">
                 Quick Links
@@ -125,12 +125,12 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            <div>
+            <div className="lg:col-span-2">
               <h4 className="text-white text-xs sm:text-sm font-bold uppercase tracking-[2px] mb-6 md:mb-8 relative inline-block">
                 Services
                 <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-purple-500"></span>
               </h4>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-2 md:gap-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 md:gap-y-3">
                 {[
                   { name: "Mobile App Dev", path: "/services/mobile-app-development" },
                   { name: "Web Development", path: "/services/web-development" },
@@ -155,15 +155,13 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-            <div>
+            <div className="col-span-2 lg:col-span-1">
               <h4 className="text-white text-xs sm:text-sm font-bold uppercase tracking-[2px] mb-6 md:mb-8 relative inline-block">
                 Location
                 <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-purple-500"></span>
               </h4>
               <div className="text-white/40 text-[13px] md:text-[15px] leading-relaxed mb-6 md:mb-8">
-                Hind Import Export International (OPC) Pvt. Ltd.
-                <br />
-                Ground Floor, Jaipur, 302021, Rajasthan, India
+                Jaipur, 302021, Rajasthan, India
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="tel:+917610000127" className="flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] cursor-pointer text-white text-sm font-bold uppercase transition-all flex-1 min-w-[160px]">
@@ -183,7 +181,7 @@ const Footer = () => {
           {/* Bottom Section: Footer Bottom */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
             <div className="text-white/40 text-xs md:text-sm">
-              &copy; 2026 Optivexa. All Rights Reserved.
+              &copy; 2024 Baruliya and Son's. All Rights Reserved. | Designed for Growth
             </div>
             <div className="flex items-center gap-4 md:gap-6">
               <div className="flex gap-3 md:gap-4">

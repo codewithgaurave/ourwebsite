@@ -8,33 +8,33 @@
   /* ─── Optivexa Color Tokens ─── */
 
   /* Backgrounds */
-  --color-ovx-bg-primary:    #0A0510;
-  --color-ovx-bg-secondary:  #0A0C1F;
-  --color-ovx-bg-tertiary:   #0b0612;
-  --color-ovx-bg-hero:       #110c18;
-  --color-ovx-bg-card:       #141627;
+  --color-ovx-bg-primary: #0A0510;
+  --color-ovx-bg-secondary: #0A0C1F;
+  --color-ovx-bg-tertiary: #0b0612;
+  --color-ovx-bg-hero: #110c18;
+  --color-ovx-bg-card: #141627;
   --color-ovx-bg-card-inner: #1a1c2e;
-  --color-ovx-bg-overlay:    #0a051080;
+  --color-ovx-bg-overlay: #0a051080;
 
   /* Accents */
-  --color-ovx-purple:        #9333ea;
-  --color-ovx-purple-light:  #a855f7;
-  --color-ovx-purple-dark:   #6B3A5B;
-  --color-ovx-purple-muted:  #4B2A40;
-  --color-ovx-purple-btn:    #6B3054;
-  --color-ovx-purple-btn-h:  #823b66;
-  --color-ovx-blue-accent:   #2b5ba3;
-  --color-ovx-blue-muted:    #324054;
-  --color-ovx-violet-muted:  #403B52;
+  --color-ovx-purple: #9333ea;
+  --color-ovx-purple-light: #a855f7;
+  --color-ovx-purple-dark: #6B3A5B;
+  --color-ovx-purple-muted: #4B2A40;
+  --color-ovx-purple-btn: #6B3054;
+  --color-ovx-purple-btn-h: #823b66;
+  --color-ovx-blue-accent: #2b5ba3;
+  --color-ovx-blue-muted: #324054;
+  --color-ovx-violet-muted: #403B52;
 
   /* Scrollbar */
-  --color-ovx-scroll-track:  #0d0b14;
-  --color-ovx-scroll-thumb:  #2a1f3d;
-  --color-ovx-scroll-hover:  #3d2b5e;
+  --color-ovx-scroll-track: #0d0b14;
+  --color-ovx-scroll-thumb: #2a1f3d;
+  --color-ovx-scroll-hover: #3d2b5e;
 
   /* Glows */
-  --color-ovx-glow-purple:   rgba(168, 85, 247, 0.3);
-  --color-ovx-glow-blue:     rgba(43, 91, 163, 0.3);
+  --color-ovx-glow-purple: rgba(168, 85, 247, 0.3);
+  --color-ovx-glow-blue: rgba(43, 91, 163, 0.3);
 }
 
 :root {
@@ -75,8 +75,13 @@ body {
 
 /* ─── Animations ─── */
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-spin-slow {
@@ -84,8 +89,15 @@ body {
 }
 
 @keyframes wave-pulse {
-  0%   { transform: scale(1);   opacity: 0.6; }
-  100% { transform: scale(2.5); opacity: 0;   }
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 
 .animate-wave {

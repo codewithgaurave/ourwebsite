@@ -70,10 +70,10 @@ const RotatingCircle = () => {
     <div className="relative w-52 h-52">
       {/* Outer Ring */}
       <div className="absolute inset-0 rounded-full border-2 border-purple-500/30"></div>
-      
+
       {/* Inner Ring */}
       <div className="absolute inset-2 rounded-full border border-dashed border-purple-400/20"></div>
-      
+
       {/* Rotating Icons Ring - Using Framer Motion */}
       <motion.div
         className="absolute inset-0"
@@ -93,13 +93,13 @@ const RotatingCircle = () => {
                 {/* Main circle */}
                 <circle cx={cx} cy={cy} r="10" fill={tech.color} />
                 {/* Tech name */}
-                <text 
-                  x={cx} 
-                  y={cy} 
-                  fontSize="7" 
-                  fontWeight="bold" 
-                  fill="#fff" 
-                  textAnchor="middle" 
+                <text
+                  x={cx}
+                  y={cy}
+                  fontSize="7"
+                  fontWeight="bold"
+                  fill="#fff"
+                  textAnchor="middle"
                   dominantBaseline="central"
                   style={{ textShadow: "0px 1px 2px rgba(0,0,0,0.5)" }}
                 >
@@ -110,12 +110,12 @@ const RotatingCircle = () => {
           })}
         </svg>
       </motion.div>
-      
+
       {/* Center Icon */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <img 
-          src={favicon} 
-          alt="Optivexa" 
+        <img
+          src={favicon}
+          alt="Optivexa"
           className="w-16 h-16 rounded-full  shadow-lg"
           style={{ background: '#120f1280', padding: '4px' }}
         />
@@ -179,9 +179,9 @@ const Hero = () => {
             </svg>
           </motion.div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <img 
+            <img
               src={favicon}
-              alt="Optivexa" 
+              alt="Optivexa"
               className="w-10 h-10 rounded-full shadow-lg"
               style={{ background: '#120f1280', padding: '2px' }}
             />
@@ -292,9 +292,8 @@ const Hero = () => {
                   <button
                     key={i}
                     onClick={() => setCurrentReview(i)}
-                    className={`h-1 rounded-full transition-all cursor-pointer ${
-                      i === currentReview ? "bg-purple-500 w-8" : "bg-white/20 w-4"
-                    }`}
+                    className={`h-1 rounded-full transition-all cursor-pointer ${i === currentReview ? "bg-purple-500 w-8" : "bg-white/20 w-4"
+                      }`}
                   />
                 ))}
               </div>

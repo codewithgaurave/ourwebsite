@@ -248,9 +248,9 @@ const AboutUs = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div
               {...fadeIn}
-              className="bg-white/5 backdrop-blur-sm p-10 rounded-3xl border border-white/10 hover:border-purple-500/30 transition-colors group"
+              className="bg-white/5 backdrop-blur-sm px-5 py-10 sm:p-10 rounded-3xl border border-white/10 hover:border-purple-500/30 transition-colors group flex flex-col items-center text-center sm:items-start sm:text-left"
             >
-              <div className="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform mx-auto sm:mx-0">
                 <Target className="text-purple-400" size={32} />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">
@@ -267,9 +267,9 @@ const AboutUs = () => {
             <motion.div
               {...fadeIn}
               transition={{ delay: 0.2 }}
-              className="bg-white/5 backdrop-blur-sm p-10 rounded-3xl border border-white/10 hover:border-blue-500/30 transition-colors group"
+              className="bg-white/5 backdrop-blur-sm px-5 py-10 sm:p-10 rounded-3xl border border-white/10 hover:border-blue-500/30 transition-colors group flex flex-col items-center text-center sm:items-start sm:text-left"
             >
-              <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform mx-auto sm:mx-0">
                 <Eye className="text-blue-400" size={32} />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">OUR VISION</h3>
@@ -305,7 +305,7 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-4 p-6 bg-[#0b0612]/50 rounded-2xl border border-white/5 hover:border-white/20 transition-all cursor-default"
+                className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-6 bg-[#0b0612]/50 rounded-2xl border border-white/5 hover:border-white/20 transition-all cursor-default text-center sm:text-left"
               >
                 <div className="shrink-0">{item.icon}</div>
                 <span className="text-white font-medium">{item.text}</span>
@@ -368,7 +368,7 @@ const AboutUs = () => {
             {/* Connection Line */}
             <div className="hidden lg:block absolute top-[60px] left-0 w-full h-0.5 bg-linear-to-r from-purple-500/20 via-blue-500/50 to-purple-500/20"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-20 md:gap-y-16 lg:gap-8">
               {approach.map((item, index) => (
                 <motion.div
                   key={index}

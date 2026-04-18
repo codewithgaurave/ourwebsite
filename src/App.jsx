@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import FloatingActions from "./components/FloatingActions";
 
 // Lazy load the components
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -56,6 +57,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <FloatingActions />
       </Suspense>
     </BrowserRouter>
   );

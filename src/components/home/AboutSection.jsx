@@ -68,7 +68,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-12 px-4 sm:py-16 sm:px-6 md:py-20 md:px-10">
+    <section className="py-12 px-4 sm:py-16 sm:px-6 md:py-20 md:px-10 overflow-hidden">
       <div
         className="relative w-full max-w-[1440px] mx-auto min-h-auto md:min-h-[700px] rounded-xl md:rounded-2xl overflow-hidden p-5 sm:p-8 md:p-16 border border-white/5"
         style={{
@@ -88,8 +88,8 @@ const AboutSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-5 relative group hidden md:block"
           >
-            <div className="absolute inset-0 bg-white/5 rounded-3xl -rotate-6 translate-x-4 translate-y-2 border border-white/10"></div>
-            <div className="absolute inset-0 bg-white/5 rounded-3xl rotate-3 translate-x-2 translate-y-1 border border-white/10"></div>
+            <div className="absolute inset-0 bg-white/5 rounded-3xl -rotate-3 translate-x-1 translate-y-1 border border-white/10"></div>
+            <div className="absolute inset-0 bg-white/5 rounded-3xl rotate-2 translate-x-0.5 translate-y-0.5 border border-white/10"></div>
 
             <div className="relative bg-[#1a1c2e] rounded-3xl p-4 border border-white/10 shadow-2xl overflow-hidden">
               <div className="absolute top-4 left-4 z-20 flex items-center gap-2">
@@ -155,9 +155,8 @@ const AboutSection = () => {
               {features.map((feature, idx) => (
                 <div key={idx} className="flex gap-3 md:gap-5 group">
                   <div
-                    className={`shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-all duration-500 ${
-                      idx === 0 ? "bg-[#4B2A40]" : idx === 1 ? "bg-[#324054]" : idx === 2 ? "bg-[#403B52]" : "bg-[#2A3B4A]"
-                    }`}
+                    className={`shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-all duration-500 ${idx === 0 ? "bg-[#4B2A40]" : idx === 1 ? "bg-[#324054]" : idx === 2 ? "bg-[#403B52]" : "bg-[#2A3B4A]"
+                      }`}
                   >
                     {feature.icon}
                   </div>
